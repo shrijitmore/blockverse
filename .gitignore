@@ -1,0 +1,17 @@
+node_modules
+dist
+dist-ssr
+*.local
+
+# zip archives / extraction scratch
+*.zip
+industry-extracted/
+
+# editor
+.vscode/*
+!.vscode/extensions.json
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
