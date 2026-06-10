@@ -61,6 +61,7 @@ export type Layer = {
   stackTitle: string
   stackSub: string
   image?: string
+  cta?: { label: string; to: string }
 }
 
 export const LAYERS: Layer[] = [
@@ -74,6 +75,7 @@ export const LAYERS: Layer[] = [
     stackTitle: 'Executive Fluency',
     stackSub: 'Leadership that speaks AI',
     image: '/assets/Executive_off.png',
+    cta: { label: 'Explore Executive AI Capability', to: '/executive-ai-capability' },
   },
   {
     tabNo: '02',

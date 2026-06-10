@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { LAYERS } from '../data'
 import { useAutoRotateTabs } from '../hooks'
 
@@ -39,6 +40,11 @@ export function Layers() {
                 {l.headline} <em>{l.emphasis}</em>
               </h3>
               <p className="panel-text">{l.body}</p>
+              {l.cta && (
+                <Link to={l.cta.to} className="panel-cta">
+                  {l.cta.label}
+                </Link>
+              )}
             </div>
           ))}
         </div>
