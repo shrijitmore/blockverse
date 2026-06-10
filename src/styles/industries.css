@@ -343,95 +343,6 @@
   margin: 0;
 }
 
-/* ── Challenges panel ── */
-.ind-challenges-panel {
-  display: grid;
-  grid-template-columns: 1fr;
-  align-items: start;
-  margin-top: 48px;
-  padding: 48px 52px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-top: 2px solid #FF3D8A;
-  backdrop-filter: blur(8px);
-}
-
-.ind-ch-col-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: #FF3D8A;
-  margin-bottom: 6px;
-}
-
-.ind-ch-col-heading {
-  font-family: 'Nunito', sans-serif;
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 24px;
-}
-
-.ind-challenge-list {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.ind-challenge-row {
-  display: grid;
-  grid-template-columns: 36px 1fr;
-  gap: 0 14px;
-  align-items: center;
-  padding: 14px 16px 14px 14px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-left: 3px solid transparent;
-  border-radius: 4px;
-  transition: all 0.22s;
-  cursor: default;
-  position: relative;
-  overflow: hidden;
-}
-
-.ind-challenge-row:hover {
-  background: rgba(255, 61, 138, 0.06);
-  border-color: rgba(255, 61, 138, 0.25);
-  border-left-color: #FF3D8A;
-  transform: translateX(4px);
-}
-
-.ind-ch-num {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.65rem;
-  color: rgba(255, 61, 138, 0.5);
-  text-align: center;
-}
-
-.ind-ch-body {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.ind-ch-function {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  text-transform: uppercase;
-  color: rgba(255, 61, 138, 0.6);
-  letter-spacing: 0.1em;
-  font-weight: 700;
-}
-
-.ind-ch-title {
-  font-family: 'Nunito', sans-serif;
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.9);
-  line-height: 1.4;
-}
-
 /* ── CTA block ── */
 .ind-block--cta {
   padding-top: 32px;
@@ -643,10 +554,6 @@
    RESPONSIVE
 ───────────────────────────────────── */
 @media (max-width: 1024px) {
-  .ind-challenges-panel {
-    padding: 36px 28px;
-  }
-
   .ind-intro {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -684,10 +591,6 @@
     flex-wrap: nowrap;
     justify-content: flex-start;
     min-width: max-content;
-  }
-
-  .ind-challenges-panel {
-    padding: 28px 20px;
   }
 
   .ind-hero__title {

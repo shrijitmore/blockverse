@@ -87,6 +87,7 @@ export const LAYERS: Layer[] = [
     stackTitle: 'Workforce Adoption',
     stackSub: 'Teams that use it daily',
     image: '/assets/Workforce.png',
+    cta: { label: 'Explore Workforce AI Adoption', to: '/workforce-ai-adoption' },
   },
   {
     tabNo: '03',
@@ -447,28 +448,6 @@ export const INDUSTRIES: IndustryData[] = [
     image: '/assets/industries/enterprise.png',
   },
 ]
-
-export type CaseStudy = {
-  tag: string
-  title: string
-  sub: string
-  desc: string
-  metric: string
-  metricLabel: string
-}
-
-export const CASE_STUDIES: CaseStudy[] = INDUSTRIES.map((ind) => {
-  const [first, second, third] = ind.impacts
-  const title = `${ind.headline}${ind.accent}`.trim()
-  return {
-    tag: ind.tag,
-    title: /[.!?]$/.test(title) ? title : `${title}.`,
-    sub: `${first.val} ${first.desc}.`,
-    desc: `${second.val} ${second.desc}. ${third.val} ${third.desc}.`,
-    metric: first.val,
-    metricLabel: first.desc,
-  }
-})
 
 export type Founder = {
   initial: string

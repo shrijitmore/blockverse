@@ -160,28 +160,6 @@ export function Industries() {
             </div>
 
             <div
-              className="ind-challenges-panel"
-              data-ind-anim="fade-up"
-              data-ind-delay="0.3"
-            >
-              <div className="ind-challenges-left">
-                <div className="ind-ch-col-label">Common Challenges</div>
-                <div className="ind-ch-col-heading">{ind.challengeHeading}</div>
-                <div className="ind-challenge-list">
-                  {ind.challenges.map((ch, i) => (
-                    <div key={i} className="ind-challenge-row">
-                      <span className="ind-ch-num">{ch.num}</span>
-                      <div className="ind-ch-body">
-                        <span className="ind-ch-function">{ch.fn}</span>
-                        <span className="ind-ch-title">{ch.title}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div
               className="ind-block ind-block--cta"
               data-ind-anim="fade-up"
               data-ind-delay="0.4"
