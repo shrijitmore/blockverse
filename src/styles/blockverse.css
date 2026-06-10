@@ -679,7 +679,7 @@ body.anim .sub {
 .mq-track {
   display: flex;
   align-items: center;
-  gap: clamp(44px, 5vw, 88px);
+  gap: clamp(14px, 1.6vw, 24px);
   width: max-content;
   animation: mqScroll 40s linear infinite;
 }
@@ -707,14 +707,22 @@ body.anim .sub {
   white-space: nowrap;
   font-family: 'Nunito', sans-serif;
   font-weight: 800;
-  font-size: clamp(20px, 1.8vw, 28px);
-  color: rgba(255, 255, 255, 0.6);
+  font-size: clamp(15px, 1.3vw, 19px);
+  color: var(--ink-soft);
   letter-spacing: -0.2px;
-  transition: color 0.3s ease, opacity 0.3s ease;
+  padding: 12px 28px;
+  border-radius: 999px;
+  background: var(--glass-bg);
+  border: 1.5px solid var(--glass-border);
+  backdrop-filter: blur(2px);
+  transition: color 0.3s ease, background 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
 }
 
 .mq-logo:hover {
   color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
 }
 
 .lg-wide {
@@ -778,7 +786,7 @@ body.anim .sub {
   font-family: 'Anton', sans-serif;
   font-weight: 400;
   text-transform: uppercase;
-  font-size: clamp(44px, 17vw, 330px);
+  font-size: clamp(36px, 12vw, 240px);
   line-height: 0.92;
   letter-spacing: 0.005em;
   color: #fff;

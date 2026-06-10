@@ -1,6 +1,5 @@
 import { Fragment, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { MicIcon, SearchIcon } from '../components/icons'
 import { HEADLINE_LINES, HERO_SUB, NAV_LINKS } from '../data'
 
 const MAIN_LINES = HEADLINE_LINES.filter((l) => !l.tag)
@@ -86,9 +85,7 @@ export function Hero() {
 
           <div className="cta-row">
             <button type="button" className="btn btn-demo">
-              <SearchIcon />
               Learn How
-              <MicIcon />
             </button>
             <button type="button" className="btn btn-learn">
               Agentic AI

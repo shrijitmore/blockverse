@@ -4,7 +4,7 @@ export function Brands() {
   return (
     <section className="brands" data-screen-label="Brands">
       <p className="brands-head">
-        Supporting creative ops for <em>real</em> creatives
+        Our Clients &amp; <em>Partners</em>
       </p>
 
       {MARQUEE_ROWS.map((row, i) => (
