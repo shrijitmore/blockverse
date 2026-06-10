@@ -96,7 +96,8 @@ export function Hero() {
             {SUB_PARTS.map((part, i) =>
               part === 'AI' ? (
                 <Fragment key={i}>
-                  <em className="sub-accent">{part}</em>
+                  <span className="brace">{'{'}</span> <em className="sub-accent">{part}</em>{' '}
+                  <span className="brace">{'}'}</span>
                 </Fragment>
               ) : (
                 <Fragment key={i}>{part}</Fragment>
