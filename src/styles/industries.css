@@ -346,8 +346,7 @@
 /* ── Challenges panel ── */
 .ind-challenges-panel {
   display: grid;
-  grid-template-columns: 1fr 320px;
-  gap: 0 48px;
+  grid-template-columns: 1fr;
   align-items: start;
   margin-top: 48px;
   padding: 48px 52px;
@@ -431,50 +430,6 @@
   font-weight: 600;
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.4;
-}
-
-/* ── Impact sidebar ── */
-.ind-impact-sidebar {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-top: 2px solid #FF3D8A;
-  padding: 28px 32px 32px;
-  backdrop-filter: blur(16px);
-  border-radius: 4px;
-}
-
-.ind-impact-sb-item {
-  padding: 22px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.ind-impact-sb-item:first-child {
-  padding-top: 0;
-}
-
-.ind-impact-sb-item:last-child {
-  border-bottom: none;
-}
-
-.ind-impact-sb-val {
-  font-family: 'Nunito', sans-serif;
-  font-size: 2.2rem;
-  font-weight: 700;
-  line-height: 1;
-  margin-bottom: 8px;
-  letter-spacing: -0.025em;
-  background: linear-gradient(95deg, #ff4d94 0%, #ffb36b 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-}
-
-.ind-impact-sb-desc {
-  font-family: 'Nunito', sans-serif;
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.55);
-  line-height: 1.6;
 }
 
 /* ── CTA block ── */
@@ -689,8 +644,6 @@
 ───────────────────────────────────── */
 @media (max-width: 1024px) {
   .ind-challenges-panel {
-    grid-template-columns: 1fr;
-    gap: 40px 0;
     padding: 36px 28px;
   }
 
