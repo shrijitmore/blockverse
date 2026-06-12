@@ -10,12 +10,12 @@ export function Footer() {
         </h2>
         <p>Customized AI adoption, architected for how your business actually runs — not bolted on after.</p>
         <div className="btns">
-          <button type="button" className="btn btn-demo">
+          <a href="#contact" className="btn btn-demo">
             Book a Demo
-          </button>
-          <button type="button" className="btn btn-learn">
+          </a>
+          <a href="#contact" className="btn btn-learn">
             Book a Call
-          </button>
+          </a>
         </div>
       </div>
 

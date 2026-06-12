@@ -6,7 +6,7 @@ export function Layers() {
   const { sectionRef, indicatorRef, registerTab, active, setActive, running } = useAutoRotateTabs(LAYERS.length)
 
   return (
-    <section className={`layers${running ? ' run' : ''}`} ref={sectionRef} data-screen-label="Layers">
+    <section className={`layers${running ? ' run' : ''}`} ref={sectionRef} id="how" data-screen-label="Layers">
       <p className="layers-eyebrow">Start where the pain is sharpest.</p>
 
       <div className="tabs" role="tablist">
@@ -40,11 +40,16 @@ export function Layers() {
                 {l.headline} <em>{l.emphasis}</em>
               </h3>
               <p className="panel-text">{l.body}</p>
-              {l.cta && (
-                <Link to={l.cta.to} className="panel-cta">
-                  {l.cta.label}
-                </Link>
-              )}
+              {l.cta &&
+                (l.cta.to.startsWith('http') ? (
+                  <a href={l.cta.to} target="_blank" rel="noopener" className="panel-cta">
+                    {l.cta.label}
+                  </a>
+                ) : (
+                  <Link to={l.cta.to} className="panel-cta">
+                    {l.cta.label}
+                  </Link>
+                ))}
             </div>
           ))}
         </div>

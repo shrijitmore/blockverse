@@ -98,7 +98,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 0 56px 80px;
+  padding: 110px 56px 80px; /* top clears the fixed .wf-nav so the eyebrow never sits under the logo */
   position: relative;
   overflow: hidden;
   background: var(--wfa-bg);

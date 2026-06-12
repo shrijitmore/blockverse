@@ -1,6 +1,7 @@
 import { Fragment, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { HEADLINE_LINES, HERO_SUB, NAV_LINKS } from '../data'
+import { HEADLINE_LINES, HERO_SUB } from '../data'
+import { NavLinks } from '../components/NavLinks'
 
 const MAIN_LINES = HEADLINE_LINES.filter((l) => !l.tag)
 const TAG_LINES = HEADLINE_LINES.filter((l) => l.tag)
@@ -42,25 +43,15 @@ export function Hero() {
       <img ref={photoRef} className="hero-photo" src="/assets/BoyTransparent.png" alt="Smiling boy holding two ice cream cones" />
 
       <header className="nav">
-        <img className="logo" src="/assets/logo.png" alt="Blockverse Technologies.ai" />
+        <Link to="/" aria-label="Blockverse home">
+          <img className="logo" src="/assets/logo.png" alt="Blockverse Technologies.ai" />
+        </Link>
         <nav>
-          <ul className="nav-links">
-            {NAV_LINKS.map((link) => (
-              <li key={link}>
-                {link === 'About Us' ? (
-                  <Link to="/about">{link}</Link>
-                ) : link === 'Businesses' ? (
-                  <Link to="/industries">{link}</Link>
-                ) : (
-                  <a href="#">{link}</a>
-                )}
-              </li>
-            ))}
-          </ul>
+          <NavLinks />
         </nav>
-        <button type="button" className="btn btn-call">
+        <a href="#contact" className="btn btn-call">
           Book a Call
-        </button>
+        </a>
       </header>
 
       <div className="hero-inner">
@@ -84,12 +75,12 @@ export function Hero() {
           </p>
 
           <div className="cta-row">
-            <button type="button" className="btn btn-demo">
+            <a href="#how" className="btn btn-demo">
               Learn How
-            </button>
-            <button type="button" className="btn btn-learn">
+            </a>
+            <a href="https://agentic.blockversetechnologies.ai/" target="_blank" rel="noopener" className="btn btn-learn">
               Agentic AI
-            </button>
+            </a>
           </div>
 
           <p className="sub">

@@ -99,6 +99,7 @@ export const LAYERS: Layer[] = [
     stackTitle: 'Workflows',
     stackSub: 'Inside your existing stack',
     image: '/assets/Workflows.png',
+    cta: { label: 'Explore Agentic AI', to: 'https://agentic.blockversetechnologies.ai/' },
   },
 ]
 

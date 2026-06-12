@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/industries.css'
+import { SiteNav } from '../components/SiteNav'
 import { INDUSTRIES } from '../data'
 
 // ── Component ────────────────────────────────────────────
@@ -58,6 +59,7 @@ export function Industries() {
 
   return (
     <div className="ind-page">
+      <SiteNav />
       {/* Hero */}
       <section className="ind-hero" id="ind-hero">
         <div className="ind-hero__bg">
