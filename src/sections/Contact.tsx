@@ -2,11 +2,6 @@ import { useState } from 'react'
 import type { FormEvent } from 'react'
 import { SectionIntro } from '../components/SectionIntro'
 
-const CONTACTS = [
-  { name: 'Gaurav Gupta', role: 'Founder and CEO', email: 'Gaurav@blockverseacademy.com' },
-  { name: 'Nimish Vasishta', role: 'Co-Founder and Investor', email: 'Nimish@blockverseacademy.com' },
-]
-
 export function Contact() {
   const [submitted, setSubmitted] = useState(false)
   const [name, setName] = useState('')
@@ -38,15 +33,12 @@ export function Contact() {
             Every engagement starts with a conversation about how your business actually runs. Share a little
             context and we&rsquo;ll come back with where AI can take real work off your teams.
           </p>
-          {CONTACTS.map((c) => (
-            <div className="contact-person" key={c.email}>
-              <div className="contact-person-name">{c.name}</div>
-              <div className="contact-person-role">{c.role}</div>
-              <a href={`mailto:${c.email}`} className="contact-person-email">
-                {c.email}
-              </a>
+          <div className="contact-person">
+            <div className="contact-person-name">What happens next</div>
+            <div className="contact-person-role">
+              We review your note and reach out within 1–2 business days to schedule the call.
             </div>
-          ))}
+          </div>
         </div>
 
         {!submitted ? (
@@ -82,11 +74,7 @@ export function Contact() {
           <div className="contact-card contact-success">
             <div className="contact-success-icon">✓</div>
             <h3>Request received.</h3>
-            <p>
-              Gaurav will reach out within 1–2 business days to schedule your call.
-              <br />
-              <a href="mailto:Gaurav@blockverseacademy.com">Gaurav@blockverseacademy.com</a>
-            </p>
+            <p>We&rsquo;ll reach out within 1–2 business days to schedule your call.</p>
           </div>
         )}
       </div>

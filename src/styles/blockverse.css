@@ -704,55 +704,27 @@ body.anim .sub {
 
 .mq-logo {
   flex: none;
-  white-space: nowrap;
-  font-family: 'Nunito', sans-serif;
-  font-weight: 800;
-  font-size: clamp(15px, 1.3vw, 19px);
-  color: var(--ink-soft);
-  letter-spacing: -0.2px;
-  padding: 12px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
   border-radius: 999px;
-  background: var(--glass-bg);
-  border: 1.5px solid var(--glass-border);
-  backdrop-filter: blur(2px);
-  transition: color 0.3s ease, background 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+  background: rgba(255, 255, 255, 0.93);
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.mq-logo img {
+  height: 36px;
+  width: auto;
+  max-width: 170px;
+  object-fit: contain;
 }
 
 .mq-logo:hover {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.4);
+  background: #fff;
   transform: translateY(-2px);
-}
-
-.lg-wide {
-  letter-spacing: 4px;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: clamp(14px, 1.25vw, 19px);
-}
-
-.lg-mono {
-  font-family: 'JetBrains Mono', monospace;
-  font-weight: 700;
-  text-transform: lowercase;
-  letter-spacing: -1px;
-}
-
-.lg-italic {
-  font-style: italic;
-  font-weight: 900;
-}
-
-.lg-black {
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.lg-serif {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-weight: 700;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
 }
 
 /* ============ Mega ============ */
