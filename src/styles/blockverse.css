@@ -707,24 +707,24 @@ body.anim .sub {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 32px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.93);
-  border: 1.5px solid rgba(255, 255, 255, 0.5);
-  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  padding: 8px clamp(28px, 3.5vw, 56px);
+  transition: opacity 0.3s ease, transform 0.2s ease;
 }
 
 .mq-logo img {
-  height: 36px;
+  height: 46px;
   width: auto;
-  max-width: 170px;
+  max-width: 200px;
   object-fit: contain;
 }
 
+.mq-logo.mq-tall img {
+  height: 64px;
+}
+
 .mq-logo:hover {
-  background: #fff;
+  opacity: 1;
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
 }
 
 /* ============ Mega ============ */

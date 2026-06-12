@@ -12,7 +12,11 @@ export function Brands() {
           <div className="mq-track">
             {[0, 1].map((rep) =>
               row.logos.map((logo, j) => (
-                <span className="mq-logo" aria-hidden={rep === 1 || undefined} key={`${rep}-${j}`}>
+                <span
+                  className={`mq-logo${logo.cls ? ` ${logo.cls}` : ''}`}
+                  aria-hidden={rep === 1 || undefined}
+                  key={`${rep}-${j}`}
+                >
                   <img src={logo.src} alt={rep === 0 ? logo.name : ''} />
                 </span>
               )),

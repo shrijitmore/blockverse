@@ -475,19 +475,19 @@ export const FOUNDERS: Founder[] = [
   },
 ]
 
-export const MARQUEE_ROWS: { reverse?: boolean; logos: { name: string; src: string }[] }[] = [
+export const MARQUEE_ROWS: { reverse?: boolean; logos: { name: string; src: string; cls?: string }[] }[] = [
   {
     logos: [
       { name: 'Google', src: '/assets/logos/google-logo-transparent.png' },
-      { name: 'Sun Pharma', src: '/assets/logos/Logo_Sun_Pharmaceutical.png' },
+      { name: 'Sun Pharma', src: '/assets/logos/white/Logo_Sun_Pharmaceutical.png', cls: 'mq-tall' },
       { name: 'Signify', src: '/assets/logos/Signify_logo.svg.png' },
-      { name: 'Government of the Netherlands', src: '/assets/logos/lrQMWH3.png' },
-      { name: 'The Hague Centre for Strategic Studies', src: '/assets/logos/HCSS_Logo_Blauw_RGB1200 ppi.png' },
-      { name: 'The Hague International Centre', src: '/assets/logos/THIC-Logo-Standard.png' },
+      { name: 'Government of the Netherlands', src: '/assets/logos/white/lrQMWH3.png' },
+      { name: 'The Hague Centre for Strategic Studies', src: '/assets/logos/white/HCSS_Logo_Blauw_RGB1200 ppi.png' },
+      { name: 'The Hague International Centre', src: '/assets/logos/white/THIC-Logo-Standard.png' },
       { name: 'Lifelong Group', src: '/assets/logos/Lifelong-Group-Logo.png' },
-      { name: 'Ellevate Amsterdam', src: '/assets/logos/Logo+ellevate+grijs+Ageo+thin.webp' },
-      { name: 'Cyber People', src: '/assets/logos/logo.png' },
-      { name: 'Polish Professional Women in the Netherlands', src: '/assets/logos/Logo_trans_1-e1428847891331.png' },
+      { name: 'Ellevate Amsterdam', src: '/assets/logos/white/Logo+ellevate+grijs+Ageo+thin.png' },
+      { name: 'Cyber People', src: '/assets/logos/white/logo.png' },
+      { name: 'Polish Professional Women in the Netherlands', src: '/assets/logos/white/Logo_trans_1-e1428847891331.png' },
     ],
   },
 ]
