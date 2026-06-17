@@ -423,8 +423,48 @@
    TEAM
    ═══════════════════════════════════════════════ */
 .ab-team {
+  position: relative;
+  overflow: hidden;
   padding: 120px 0;
   border-top: 1px solid rgba(255,255,255,.08);
+}
+.ab-team > .ab-container {
+  position: relative;
+  z-index: 1;
+}
+.ab-team__watermark {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.ab-team__wm {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 0.25em;
+  font-family: 'Anton', sans-serif;
+  text-transform: uppercase;
+  font-size: clamp(60px, 11vw, 180px);
+  line-height: 0.9;
+  letter-spacing: 0.01em;
+  color: rgba(255, 255, 255, 0.05);
+  white-space: nowrap;
+}
+.ab-team__wm-flag {
+  font-size: 0.7em;
+  opacity: 0.5;
+}
+.ab-team__wm--nl {
+  top: 5%;
+  left: -2%;
+  transform: rotate(-4deg);
+}
+.ab-team__wm--ch {
+  bottom: 5%;
+  right: -2%;
+  transform: rotate(-4deg);
 }
 .ab-team__grid {
   display: grid;

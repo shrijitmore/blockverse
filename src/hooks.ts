@@ -123,8 +123,8 @@ export function useInView<T extends HTMLElement = HTMLElement>(threshold = 0.2) 
   return { ref, inView }
 }
 
-/** Auto-rotating tab deck: advances every `intervalMs` while in view, pauses offscreen, tracks a sliding indicator. */
-export function useAutoRotateTabs(count: number, intervalMs = 5000) {
+/** Tab deck with a sliding indicator. When `autoPlay`, advances every `intervalMs` while in view; otherwise manual-only. */
+export function useAutoRotateTabs(count: number, intervalMs = 5000, autoPlay = true) {
   const sectionRef = useRef<HTMLElement>(null)
   const indicatorRef = useRef<HTMLDivElement>(null)
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([])
@@ -165,10 +165,10 @@ export function useAutoRotateTabs(count: number, intervalMs = 5000) {
   }, [])
 
   useEffect(() => {
-    if (!inView || prefersReducedMotion()) return
+    if (!autoPlay || !inView || prefersReducedMotion()) return
     const id = window.setInterval(() => setActive((a) => (a + 1) % count), intervalMs)
     return () => window.clearInterval(id)
-  }, [inView, count, intervalMs])
+  }, [autoPlay, inView, count, intervalMs])
 
-  return { sectionRef, indicatorRef, registerTab, active, setActive, running: inView }
+  return { sectionRef, indicatorRef, registerTab, active, setActive, running: autoPlay && inView }
 }

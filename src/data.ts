@@ -2,10 +2,12 @@ export const NAV_LINKS = ['Businesses', 'Individuals', 'Programs', 'About Us']
 
 export const HEADLINE_LINES = [
   { text: 'Customised', accent: 'Ai', delay: '.45s' },
-  { text: 'Adoption Systems', delay: '.55s' },
-  { text: 'BUILT', accent: ' In,', delay: '.66s', tag: true, spaced: true },
-  { text: 'Not Bolted On', delay: '.77s', dark: true, tag: true },
+  { text: 'Adoption', delay: '.55s' },
+  { text: 'Systems', delay: '.64s' },
 ]
+
+export const HERO_BUILT = { lead: 'BUILT', accent: 'In.', delay: '.74s' }
+export const HERO_NOT_BOLTED = { l1: 'Not', l2: 'Bolted On', delay: '.84s' }
 
 export const HERO_SUB = 'We Help companies adopt AI and embed it in their real work'
 
@@ -488,6 +490,9 @@ export const MARQUEE_ROWS: { reverse?: boolean; logos: { name: string; src: stri
       { name: 'Ellevate Amsterdam', src: '/assets/logos/white/Logo+ellevate+grijs+Ageo+thin.png' },
       { name: 'Cyber People', src: '/assets/logos/white/logo.png' },
       { name: 'Polish Professional Women in the Netherlands', src: '/assets/logos/white/Logo_trans_1-e1428847891331.png' },
+      { name: 'Adeera', src: '/assets/logos/adeera.png' },
+      { name: 'Legacy Emirates Group', src: '/assets/logos/legacy-emirates.png', cls: 'mq-tall' },
+      { name: 'Xtra Advice', src: '/assets/logos/xtra-advice.svg' },
     ],
   },
 ]

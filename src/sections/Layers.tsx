@@ -3,7 +3,7 @@ import { LAYERS } from '../data'
 import { useAutoRotateTabs } from '../hooks'
 
 export function Layers() {
-  const { sectionRef, indicatorRef, registerTab, active, setActive, running } = useAutoRotateTabs(LAYERS.length)
+  const { sectionRef, indicatorRef, registerTab, active, setActive, running } = useAutoRotateTabs(LAYERS.length, 5000, false)
 
   return (
     <section className={`layers${running ? ' run' : ''}`} ref={sectionRef} id="how" data-screen-label="Layers">

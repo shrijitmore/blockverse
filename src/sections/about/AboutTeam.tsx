@@ -12,7 +12,7 @@ const TEAM = [
   },
   {
     name: 'Nimish Vasishta',
-    role: 'Managing Partner & Investor',
+    role: 'Co-founder & Investor',
     email: 'nimish@blockverseacademy.com',
     location: 'Switzerland 🇨🇭',
     linkedin: 'https://www.linkedin.com/in/nimish-vasishta-blockverse/',
@@ -44,11 +44,21 @@ export function AboutTeam() {
 
   return (
     <section className="ab-team">
+      <div className="ab-team__watermark" aria-hidden="true">
+        <span className="ab-team__wm ab-team__wm--nl">
+          <span className="ab-team__wm-flag">🇳🇱</span>
+          <span className="ab-team__wm-name">Netherlands</span>
+        </span>
+        <span className="ab-team__wm ab-team__wm--ch">
+          <span className="ab-team__wm-flag">🇨🇭</span>
+          <span className="ab-team__wm-name">Switzerland</span>
+        </span>
+      </div>
       <div className="ab-container">
         <div ref={headRef} className="ab-section-head ab-section-head--center" data-ab-anim="fade-up">
           <span className="ab-kicker">LEADERSHIP</span>
           <h2 className="ab-section-title">
-            <span className="ab-grad">The Team</span> Behind BlockVerse
+            <span className="ab-grad">Founding</span> Team
           </h2>
         </div>
 

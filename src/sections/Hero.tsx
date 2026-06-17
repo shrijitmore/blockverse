@@ -1,10 +1,8 @@
 import { Fragment, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { HEADLINE_LINES, HERO_SUB } from '../data'
+import { HEADLINE_LINES, HERO_BUILT, HERO_NOT_BOLTED, HERO_SUB } from '../data'
 import { NavLinks } from '../components/NavLinks'
 
-const MAIN_LINES = HEADLINE_LINES.filter((l) => !l.tag)
-const TAG_LINES = HEADLINE_LINES.filter((l) => l.tag)
 const SUB_PARTS = HERO_SUB.split(/(AI)/)
 
 export function Hero() {
@@ -26,7 +24,7 @@ export function Hero() {
         if (!photo) return
         const x = e.clientX / window.innerWidth - 0.5
         const y = e.clientY / window.innerHeight - 0.5
-        photo.style.transform = `scale(1.05) translate(${x * -14}px, ${y * -10}px)`
+        photo.style.transform = `scale(1.04) translate(${x * -14}px, ${y * -10}px)`
       })
     }
     window.addEventListener('mousemove', onMove)
@@ -55,10 +53,10 @@ export function Hero() {
       </header>
 
       <div className="hero-inner">
-        <div className="copy">
+        <div className="hero-copy">
           <h1 className="headline">
-            {MAIN_LINES.map((line, i) => (
-              <span className={`line${line.dark ? ' dark' : ''}`} key={i} style={{ animationDelay: line.delay }}>
+            {HEADLINE_LINES.map((line, i) => (
+              <span className="line" key={i} style={{ animationDelay: line.delay }}>
                 {line.text}
                 {line.accent ? <> <span className="grad-in">{line.accent}</span></> : null}
               </span>
@@ -66,19 +64,13 @@ export function Hero() {
           </h1>
 
           <p className="headline-tag">
-            {TAG_LINES.map((line, i) => (
-              <span className={`line${line.dark ? ' dark' : ''}${line.spaced ? ' spaced' : ''}`} key={i} style={{ animationDelay: line.delay }}>
-                {line.text}
-                {line.accent ? <span className="tag-accent">{line.accent}</span> : null}
-              </span>
-            ))}
+            <span className="line spaced" style={{ animationDelay: HERO_BUILT.delay }}>
+              {HERO_BUILT.lead} <span className="tag-accent">{HERO_BUILT.accent}</span>
+            </span>
           </p>
 
           <div className="cta-row">
-            <a href="#how" className="btn btn-demo">
-              Learn How
-            </a>
-            <a href="https://agentic.blockversetechnologies.ai/" target="_blank" rel="noopener" className="btn btn-learn">
+            <a href="https://agentic.blockversetechnologies.ai/" target="_blank" rel="noopener" className="btn btn-agentic">
               Agentic AI
             </a>
           </div>
@@ -95,6 +87,22 @@ export function Hero() {
               ),
             )}
           </p>
+        </div>
+
+        <div className="hero-right">
+          <p className="hero-bolted" style={{ animationDelay: HERO_NOT_BOLTED.delay }}>
+            <span>{HERO_NOT_BOLTED.l1}</span>
+            <span>{HERO_NOT_BOLTED.l2}</span>
+          </p>
+          <a href="#how" className="hero-learn">
+            <span>Learn How</span>
+            <span className="hero-learn__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
+                <circle cx="11" cy="11" r="7" />
+                <line x1="21" y1="21" x2="16.5" y2="16.5" />
+              </svg>
+            </span>
+          </a>
         </div>
       </div>
     </section>
