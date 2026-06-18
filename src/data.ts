@@ -1,4 +1,4 @@
-export const NAV_LINKS = ['Businesses', 'Individuals', 'Programs', 'About Us']
+export const NAV_LINKS = ['What We Do', 'Built-In Method', 'About Us', 'Agentic AI Systems']
 
 export const HEADLINE_LINES = [
   { text: 'Customised', accent: 'Ai', delay: '.45s' },
