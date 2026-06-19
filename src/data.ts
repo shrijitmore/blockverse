@@ -493,6 +493,11 @@ export const MARQUEE_ROWS: { reverse?: boolean; logos: { name: string; src: stri
       { name: 'Adeera', src: '/assets/logos/adeera.png' },
       { name: 'Legacy Emirates Group', src: '/assets/logos/legacy-emirates.png', cls: 'mq-tall' },
       { name: 'Xtra Advice', src: '/assets/logos/xtra-advice.svg' },
+      { name: 'ESDP — European Supplier Diversity Program', src: '/assets/logos/esdp.png' },
+      { name: 'Dutch New Narrative Lab', src: '/assets/logos/dnnl.png' },
+      { name: 'femHire', src: '/assets/logos/fem-hire.png', cls: 'mq-tall' },
+      { name: 'Leiden International Centre', src: '/assets/logos/leiden.png', cls: 'mq-tall' },
+      { name: 'M/V Works', src: '/assets/logos/mv-works.png' },
     ],
   },
 ]
