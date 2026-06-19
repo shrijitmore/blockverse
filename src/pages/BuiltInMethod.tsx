@@ -22,12 +22,19 @@ export function BuiltInMethod() {
               <div className="b-tagline">
                 Built in, <span className="b-pf b-grad">not bolted on.</span>
               </div>
+              <p className="b-lede">AI adoption works best when it is designed around real work.</p>
               <p className="b-lede">
-                Your people already use AI — the UAE leads the world at <b>70% adoption</b>, the Netherlands at 42%. The
-                question is no longer <i>whether</i> teams use AI. It's whether it's{' '}
-                <b>built into how your business runs — or bolted on around it</b>. Most is bolted on: scattered tools,
-                dead pilots, and under 30% of a <span className="b-brace">{'{'}</span>&nbsp;$2.7T&nbsp;
-                <span className="b-brace">{'}'}</span> AI spend ever truly adopted.
+                The Built-In Method™ helps companies weave AI into the workflows, decisions, systems, and daily
+                behaviours that already run the business.
+              </p>
+              <p className="b-lede">
+                We start by mapping where work happens today — the handovers, approvals, documents, data flows, and
+                repeated decisions. Then we redesign those workflows with AI built in, creating customised agentic
+                systems that support teams, improve execution, and make adoption feel natural.
+              </p>
+              <p className="b-lede">This is AI shaped around your business.</p>
+              <p className="b-lede">
+                <b>Built into work.</b> <span className="b-grad">Not bolted on.</span>
               </p>
             </div>
             <img className="b-boy" src="/assets/hero-boy.png" alt="A child enjoying ice cream — no manual required" />
