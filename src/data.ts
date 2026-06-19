@@ -9,7 +9,7 @@ export const HEADLINE_LINES = [
 export const HERO_BUILT = { lead: 'BUILT', accent: 'In.', delay: '.74s' }
 export const HERO_NOT_BOLTED = { l1: 'Not', l2: 'Bolted On', delay: '.84s' }
 
-export const HERO_SUB = 'We Help companies adopt AI and embed it in their real work'
+export const HERO_SUB = 'We help companies adopt AI and embed it in their real work'
 
 export type BentoCard = {
   num: string
@@ -69,7 +69,7 @@ export type Layer = {
 export const LAYERS: Layer[] = [
   {
     tabNo: '01',
-    tabLabel: 'Executive Fluency',
+    tabLabel: 'Leaders — Executive Fluency',
     layerNum: 'Layer 01 — Executive Fluency',
     headline: 'Fluent at the top.',
     emphasis: 'Confident everywhere.',
@@ -81,7 +81,7 @@ export const LAYERS: Layer[] = [
   },
   {
     tabNo: '02',
-    tabLabel: 'Workforce Adoption',
+    tabLabel: 'Teams — Workforce Adoption',
     layerNum: 'Layer 02 — Workforce Adoption',
     headline: 'Adoption that sticks —',
     emphasis: 'because it fits the work.',
@@ -93,7 +93,7 @@ export const LAYERS: Layer[] = [
   },
   {
     tabNo: '03',
-    tabLabel: 'Workflows',
+    tabLabel: 'Agentic AI Workflows',
     layerNum: 'Layer 03 — Workflows',
     headline: 'Built in, not bolted on.',
     emphasis: "When it's built in, it gets used.",

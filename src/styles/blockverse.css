@@ -458,10 +458,10 @@ footer {
 
 .sub {
   margin-top: 18px;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-style: italic;
+  font-family: 'Nunito', sans-serif;
+  font-style: normal;
   font-size: clamp(17px, 1.6vw, 24px);
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.92);
   max-width: 460px;
