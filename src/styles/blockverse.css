@@ -150,7 +150,7 @@ footer {
 
 .hero-photo {
   position: absolute;
-  left: 0;
+  left: 10%;
   right: 0;
   bottom: 0;
   margin-inline: auto;
@@ -291,7 +291,7 @@ footer {
 .hero-bolted {
   display: flex;
   flex-direction: column;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'League Spartan', sans-serif;
   font-weight: 900;
   font-size: clamp(32px, 4vw, 62px);
   line-height: 0.98;
@@ -331,9 +331,10 @@ footer {
 }
 
 .headline {
+  font-family: 'League Spartan', sans-serif;
   font-weight: 900;
-  font-size: clamp(36px, 4.5vw, 64px);
-  line-height: 1.05;
+  font-size: clamp(38px, 4.8vw, 68px);
+  line-height: 1.02;
   letter-spacing: -1.5px;
   text-shadow: 0 4px 24px rgba(0, 20, 60, 0.35);
 }
@@ -354,7 +355,7 @@ footer {
 
 .headline-tag {
   margin-top: 20px;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'League Spartan', sans-serif;
   font-weight: 800;
   font-size: clamp(20px, 2.2vw, 34px);
   line-height: 1.15;
@@ -400,6 +401,7 @@ footer {
   color: #fff;
   font-weight: 800;
   border: none;
+  border-radius: 999px;
   padding: 14px 32px;
   box-shadow: 0 12px 30px rgba(70, 110, 220, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.35);
 }

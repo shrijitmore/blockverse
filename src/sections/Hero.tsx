@@ -47,6 +47,9 @@ export function Hero() {
         <nav>
           <NavLinks />
         </nav>
+        <a href="#contact" className="btn btn-call">
+          Book a Call
+        </a>
       </header>
 
       <div className="hero-inner">

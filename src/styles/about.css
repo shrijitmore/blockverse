@@ -708,6 +708,8 @@
 .jvm-zoom-btn.jvm-zoom-in  { top: 20px !important; }
 .jvm-zoom-btn.jvm-zoom-out { top: 60px !important; }
 .jvm-tooltip {
+  position: absolute !important;
+  z-index: 1000 !important;
   background: rgba(6,18,46,.95) !important;
   border: 1px solid rgba(255,255,255,.12) !important;
   font-size: 13px !important;
