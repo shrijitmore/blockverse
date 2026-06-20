@@ -11,7 +11,6 @@ export function BuiltInMethod() {
         {/* HEADER */}
         <header className="b-pad">
           <div className="b-head-top">
-            <img className="b-logo" src="/assets/logo.png" alt="Blockverse Technologies.ai" />
             <span className="b-kicker">The Methodology</span>
           </div>
           <div className="b-hero">
