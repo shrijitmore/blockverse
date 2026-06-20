@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Workforce Agentic AI Adoption | BlockVerse Technologies</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* Section fills are now translucent so the blue document gradient shows through */
+  --bg:    rgba(6,28,46,0.14);
+  --bg2:   rgba(5,22,38,0.34);
+  --bg3:   rgba(4,18,32,0.48);
+  /* Accent palette sampled from the chart image: orange → coral-red → hot pink */
+  --gold:  #F23E6D;
+  --gold2: #F76A8E;
+  --grad:  linear-gradient(135deg, #F7941E 0%, #F2433E 50%, #F0357F 100%);
+  --grad2: linear-gradient(135deg, #FBA63A 0%, #F65E57 50%, #F45593 100%);
+  --cream: #F5F0E8;
+  --ink:   #2a0a14;
+  --muted: rgba(245,240,232,0.62);
+  --line:  rgba(245,240,232,0.14);
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans:  'Space Grotesk', system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: radial-gradient(ellipse 90% 75% at 50% 32%,
+                #1f8fc6 0%,
+                #1576ab 38%,
+                #0d5685 68%,
+                #0a4870 86%,
+                #073a5c 100%) fixed;
+}
+body { font-family: var(--sans); background: transparent; color: var(--cream); overflow-x: hidden; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 28px 56px;
+  transition: padding .5s, background .5s, border .5s;
+}
+nav.scrolled {
+  padding: 16px 56px;
+  background: rgba(7,40,64,.78);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--line);
+}
+.nav-logo { text-decoration: none; }
+/* ── BRAND LOCKUP ── */
+.brand-lock { display: flex; align-items: center; gap: 12px; }
+.brand-cube { width: 38px; height: 38px; flex-shrink: 0; }
+.brand-words { display: flex; flex-direction: column; line-height: 1; }
+.brand-name { font-family: var(--sans); font-weight: 700; font-size: 23px; letter-spacing: -.01em; color: var(--cream); }
+.brand-tag { font-size: 9.5px; font-weight: 600; letter-spacing: .3em; color: rgba(245,240,232,.85); margin-top: 6px; text-transform: uppercase; }
+.brand-tag .ai { color: var(--gold); letter-spacing: .02em; text-transform: none; }
+.nav-right { display: flex; align-items: center; gap: 40px; }
+.nav-link { font-size: 13px; color: var(--muted); text-decoration: none; letter-spacing: .04em; transition: color .2s; }
+.nav-link:hover { color: var(--cream); }
+.nav-cta {
+  font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--ink); background: var(--grad); padding: 11px 28px; border-radius: 2px;
+  text-decoration: none; transition: background .2s, transform .2s;
+}
+.nav-cta:hover { background: var(--grad2); transform: translateY(-1px); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh; display: flex; flex-direction: column;
+  justify-content: flex-end; padding: 0 56px 80px;
+  position: relative; overflow: hidden; background: var(--bg);
+}
+.hero-rule {
+  position: absolute; top: 0; bottom: 0; right: 0; width: 44%;
+  border-left: 1px solid var(--line);
+  background: linear-gradient(180deg, transparent, rgba(242,62,109,.03) 50%, transparent);
+}
+.hero-bg-word {
+  position: absolute; top: 50%; right: 48px; transform: translateY(-50%);
+  font-family: var(--serif); font-size: clamp(180px, 26vw, 340px);
+  font-weight: 900; color: rgba(242,62,109,.04);
+  line-height: 1; pointer-events: none; user-select: none; letter-spacing: -.05em;
+}
+.hero-eyebrow {
+  font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 32px;
+  display: flex; align-items: center; gap: 14px;
+  opacity: 0; animation: fadeInUp .8s .3s both;
+}
+.hero-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--gold); }
+.hero-headline {
+  font-family: var(--serif);
+  font-size: clamp(56px, 9vw, 124px);
+  font-weight: 900; line-height: .95; letter-spacing: -.03em; max-width: 860px;
+  opacity: 0; animation: fadeInUp .9s .5s both;
+}
+.hero-headline em { font-style: italic; color: var(--gold); }
+.hero-bottom {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  margin-top: 56px; padding-top: 40px; border-top: 1px solid var(--line);
+  opacity: 0; animation: fadeInUp .9s .8s both;
+}
+.hero-desc { font-size: clamp(15px, 1.4vw, 17px); color: var(--muted); line-height: 1.8; max-width: 400px; font-weight: 300; }
+.hero-desc strong { color: var(--cream); font-weight: 500; }
+.hero-cta-group { display: flex; flex-direction: column; align-items: flex-end; gap: 14px; }
+.hero-cta-main {
+  font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--ink); background: var(--grad); padding: 16px 36px; border-radius: 2px;
+  text-decoration: none; transition: background .2s, transform .2s;
+}
+.hero-cta-main:hover { background: var(--grad2); transform: translateY(-2px); }
+.hero-cta-sub { font-size: 12px; color: var(--muted); letter-spacing: .04em; text-align: right; }
+.hero-scroll {
+  position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  opacity: 0; animation: fadeIn 1s 1.4s both;
+}
+.hero-scroll span { font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+.scroll-bar { width: 1px; height: 48px; background: linear-gradient(180deg, var(--gold), transparent); animation: scrollAnim 2s 2s infinite; }
+@keyframes scrollAnim { 0%{transform:scaleY(0);transform-origin:top;opacity:0} 30%{opacity:1} 100%{transform:scaleY(1);transform-origin:top;opacity:0} }
+
+/* ── MARQUEE ── */
+.marquee-strip {
+  overflow: hidden; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  padding: 18px 0; background: var(--bg2);
+}
+.marquee-track {
+  display: flex; gap: 64px; white-space: nowrap;
+  animation: marquee 26s linear infinite;
+}
+.marquee-track span { font-size: 11px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); flex-shrink: 0; }
+.marquee-track .dot { color: var(--gold); }
+@keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+/* ── STATEMENT ── */
+.statement {
+  padding: 160px 56px; background: var(--bg2);
+  display: flex; align-items: center; justify-content: center;
+}
+.statement-inner { max-width: 960px; }
+.s-label {
+  font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 48px; display: flex; align-items: center; gap: 14px;
+}
+.s-label::before { content: ''; width: 32px; height: 1px; background: var(--gold); }
+.s-quote {
+  font-family: var(--serif);
+  font-size: clamp(26px, 3.8vw, 50px);
+  font-weight: 400; line-height: 1.45; letter-spacing: -.01em; color: var(--cream);
+}
+.s-quote em { font-style: italic; color: var(--gold); }
+.s-quote strong { font-weight: 700; }
+.s-attr { margin-top: 48px; font-size: 13px; color: var(--muted); font-weight: 500; letter-spacing: .06em; }
+
+/* ── PILLARS ── */
+.pillars { padding: 140px 56px; background: var(--bg); }
+.pillars-header {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  margin-bottom: 80px; border-bottom: 1px solid var(--line); padding-bottom: 40px;
+}
+.pillars-header h2 { font-family: var(--serif); font-size: clamp(34px, 5vw, 58px); font-weight: 700; letter-spacing: -.03em; max-width: 440px; line-height: 1.1; }
+.pillars-header p { font-size: 14px; color: var(--muted); max-width: 260px; line-height: 1.75; font-weight: 300; }
+.pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+.pillar { padding: 48px 40px; border-right: 1px solid var(--line); position: relative; overflow: hidden; cursor: default; }
+.pillar:last-child { border-right: none; }
+.pillar-fill {
+  position: absolute; inset: 0; background: var(--grad);
+  transform: translateY(100%); transition: transform .6s cubic-bezier(.16,1,.3,1); z-index: 0;
+}
+.pillar:hover .pillar-fill { transform: translateY(0); }
+.pillar:hover .pillar-num,
+.pillar:hover h3,
+.pillar:hover p { color: var(--ink); }
+.pillar-num { font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; position: relative; z-index: 1; transition: color .3s; }
+.pillar h3 { font-family: var(--serif); font-size: 26px; font-weight: 700; margin-bottom: 16px; position: relative; z-index: 1; transition: color .3s; letter-spacing: -.01em; }
+.pillar p { font-size: 14px; color: var(--muted); line-height: 1.75; font-weight: 300; position: relative; z-index: 1; transition: color .3s; }
+
+/* ── FRAMEWORK ── */
+.framework { padding: 140px 56px; background: var(--bg3); }
+.framework-top {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end;
+  margin-bottom: 72px; padding-bottom: 40px; border-bottom: 1px solid var(--line);
+}
+.framework-top h2 { font-family: var(--serif); font-size: clamp(34px, 5vw, 58px); font-weight: 700; letter-spacing: -.03em; line-height: 1.1; }
+.framework-top p { font-size: 15px; color: var(--muted); line-height: 1.8; font-weight: 300; max-width: 340px; }
+.framework-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+.fw-cell {
+  padding: 40px 36px; border-right: 1px solid var(--line);
+  position: relative; overflow: hidden; cursor: default;
+  transition: background .35s;
+}
+.fw-cell:last-child { border-right: none; }
+.fw-cell:hover { background: rgba(242,62,109,.04); }
+.fw-cell::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: var(--gold); transform: scaleX(0); transform-origin: left;
+  transition: transform .5s cubic-bezier(.16,1,.3,1);
+}
+.fw-cell:hover::before { transform: scaleX(1); }
+.fw-letter {
+  font-family: var(--serif); font-size: 56px; font-weight: 900;
+  color: rgba(242,62,109,.1); line-height: 1; margin-bottom: 20px;
+  transition: color .3s;
+}
+.fw-cell:hover .fw-letter { color: rgba(242,62,109,.2); }
+.fw-title { font-family: var(--serif); font-size: 20px; font-weight: 700; margin-bottom: 12px; letter-spacing: -.01em; }
+.fw-items { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.fw-items li { font-size: 13px; color: var(--muted); font-weight: 300; line-height: 1.5; }
+.fw-tag {
+  display: inline-block; margin-top: 20px;
+  font-size: 9px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--gold); border: 1px solid rgba(242,62,109,.3); padding: 4px 10px; border-radius: 2px;
+}
+
+/* ── TIERS ── */
+.tiers { padding: 140px 56px; background: var(--bg); }
+.tiers-top { max-width: 1100px; margin: 0 auto 72px; }
+.tiers-label { font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 32px; display: flex; align-items: center; gap: 14px; }
+.tiers-label::before { content: ''; width: 32px; height: 1px; background: var(--gold); }
+.tiers-top h2 { font-family: var(--serif); font-size: clamp(34px, 5vw, 58px); font-weight: 700; letter-spacing: -.03em; line-height: 1.1; max-width: 640px; }
+.tiers-top h2 em { font-style: italic; color: var(--gold); }
+.tiers-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+.tier-card {
+  border: 1px solid var(--line); border-radius: 4px; padding: 40px 36px;
+  background: var(--bg2); position: relative; overflow: hidden; transition: border-color .3s, transform .3s;
+}
+.tier-card:hover { border-color: rgba(242,62,109,.4); transform: translateY(-4px); }
+.tier-num { font-family: var(--serif); font-size: 64px; font-weight: 900; color: rgba(242,62,109,.12); line-height: 1; margin-bottom: 20px; }
+.tier-card h3 { font-family: var(--serif); font-size: 23px; font-weight: 700; margin-bottom: 12px; letter-spacing: -.01em; }
+.tier-card p { font-size: 14px; color: var(--muted); line-height: 1.75; font-weight: 300; }
+
+/* ── OUTCOMES ── */
+.outcomes { padding: 140px 56px; background: var(--bg2); }
+.outcomes-top { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-bottom: 72px; align-items: end; }
+.outcomes-top h2 { font-family: var(--serif); font-size: clamp(34px, 5vw, 58px); font-weight: 700; letter-spacing: -.03em; line-height: 1.1; }
+.outcomes-top h2 em { font-style: italic; color: var(--gold); }
+.outcomes-top p { font-size: 15px; color: var(--muted); line-height: 1.8; font-weight: 300; max-width: 340px; }
+.outcomes-rows { border-top: 1px solid var(--line); }
+.outcome-row {
+  display: grid; grid-template-columns: 72px 1fr 1fr; gap: 32px;
+  padding: 34px 0; border-bottom: 1px solid var(--line);
+  align-items: start; cursor: default; position: relative;
+}
+.outcome-row::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+  width: 0; background: var(--gold); transition: width .5s cubic-bezier(.16,1,.3,1);
+}
+.outcome-row:hover::before { width: 2px; }
+.outcome-row:hover .o-num { color: var(--gold); }
+.outcome-row:hover .o-title { color: var(--gold2); }
+.o-num { font-family: var(--serif); font-size: 40px; font-weight: 400; color: var(--line); line-height: 1; transition: color .3s; letter-spacing: -.03em; }
+.o-title { font-family: var(--serif); font-size: clamp(17px, 2vw, 22px); font-weight: 600; letter-spacing: -.01em; line-height: 1.3; transition: color .3s; }
+.o-desc { font-size: 14px; color: var(--muted); line-height: 1.75; font-weight: 300; }
+
+/* ── NUMBERS ── */
+.numbers { padding: 100px 56px; background: var(--bg); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.numbers-inner { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; max-width: 1100px; margin: 0 auto; }
+.num-cell { text-align: center; padding: 0 32px; border-right: 1px solid var(--line); }
+.num-cell:last-child { border-right: none; }
+.num-val { font-family: var(--serif); font-size: clamp(40px, 5.5vw, 64px); font-weight: 900; color: var(--gold); line-height: 1; margin-bottom: 12px; letter-spacing: -.04em; }
+.num-label { font-size: 12px; font-weight: 500; color: var(--muted); letter-spacing: .06em; line-height: 1.5; text-transform: uppercase; }
+
+/* ── PROOF ── */
+.proof { padding: 140px 56px; background: var(--bg3); }
+.proof-top { max-width: 1100px; margin: 0 auto 72px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; }
+.proof-label { font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 32px; display: flex; align-items: center; gap: 14px; }
+.proof-label::before { content: ''; width: 32px; height: 1px; background: var(--gold); }
+.proof-top h2 { font-family: var(--serif); font-size: clamp(34px, 5vw, 56px); font-weight: 700; letter-spacing: -.03em; line-height: 1.1; }
+.proof-top h2 em { font-style: italic; color: var(--gold); }
+.proof-top p { font-size: 15px; color: var(--muted); line-height: 1.8; font-weight: 300; }
+.proof-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.case-card {
+  border: 1px solid var(--line); border-radius: 4px; padding: 44px 40px;
+  background: var(--bg2); transition: border-color .3s, transform .3s;
+}
+.case-card:hover { border-color: rgba(242,62,109,.4); transform: translateY(-4px); }
+.case-tag { display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(242,62,109,.3); padding: 5px 12px; border-radius: 2px; margin-bottom: 24px; }
+.case-card h3 { font-family: var(--serif); font-size: 25px; font-weight: 700; letter-spacing: -.01em; line-height: 1.2; margin-bottom: 16px; }
+.case-card p { font-size: 14px; color: var(--muted); line-height: 1.8; font-weight: 300; margin-bottom: 24px; }
+.case-result { display: flex; gap: 28px; padding-top: 24px; border-top: 1px solid var(--line); }
+.case-result-item {}
+.case-result-val { font-family: var(--serif); font-size: 22px; font-weight: 700; color: var(--gold); line-height: 1; }
+.case-result-label { font-size: 11px; color: var(--muted); margin-top: 6px; letter-spacing: .04em; line-height: 1.4; }
+
+/* ── DIFFERENTIATORS ── */
+.diff { padding: 140px 56px; background: var(--bg2); }
+.diff-top { max-width: 1100px; margin: 0 auto 64px; }
+.diff-label { font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 32px; display: flex; align-items: center; gap: 14px; }
+.diff-label::before { content: ''; width: 32px; height: 1px; background: var(--gold); }
+.diff-top h2 { font-family: var(--serif); font-size: clamp(34px, 5vw, 56px); font-weight: 700; letter-spacing: -.03em; line-height: 1.1; max-width: 640px; }
+.diff-rows { max-width: 1100px; margin: 0 auto; border-top: 1px solid var(--line); }
+.diff-row {
+  display: grid; grid-template-columns: 64px 1fr 1.4fr; gap: 32px;
+  padding: 34px 0; border-bottom: 1px solid var(--line); align-items: start;
+  cursor: default; position: relative;
+}
+.diff-row::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 0; background: var(--gold); transition: width .5s cubic-bezier(.16,1,.3,1); }
+.diff-row:hover::before { width: 2px; }
+.diff-row:hover .diff-num { color: var(--gold); }
+.diff-num { font-family: var(--serif); font-size: 36px; font-weight: 400; color: var(--line); line-height: 1; transition: color .3s; }
+.diff-h { font-family: var(--serif); font-size: clamp(17px, 2vw, 21px); font-weight: 600; letter-spacing: -.01em; line-height: 1.3; }
+.diff-p { font-size: 14px; color: var(--muted); line-height: 1.8; font-weight: 300; }
+
+/* ── WHO ── */
+.who { padding: 140px 56px; background: var(--bg); position: relative; overflow: hidden; }
+.who-inner { display: grid; grid-template-columns: 1.1fr .9fr; gap: 80px; align-items: start; }
+.who-label { font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 32px; display: flex; align-items: center; gap: 14px; }
+.who-label::before { content: ''; width: 32px; height: 1px; background: var(--gold); }
+.who-left h2 { font-family: var(--serif); font-size: clamp(34px, 5vw, 60px); font-weight: 700; letter-spacing: -.03em; line-height: 1.05; margin-bottom: 28px; }
+.who-left h2 em { font-style: italic; color: var(--gold); }
+.who-left p { font-size: 15px; color: var(--muted); line-height: 1.8; font-weight: 300; max-width: 380px; }
+.who-roles {}
+.who-role {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 22px 0; border-bottom: 1px solid var(--line);
+  font-size: 15px; font-weight: 500; cursor: default; transition: color .2s;
+}
+.who-role:first-child { border-top: 1px solid var(--line); }
+.who-role .arr { color: transparent; font-size: 16px; transition: color .2s; }
+.who-role:hover { color: var(--gold); }
+.who-role:hover .arr { color: var(--gold); }
+
+/* ── PARTNERS ── */
+.partners { padding: 120px 56px; background: var(--bg2); border-top: 1px solid var(--line); }
+.partners-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+.partners-label { font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+.partners-inner h2 { font-family: var(--serif); font-size: clamp(28px, 4vw, 44px); font-weight: 700; letter-spacing: -.02em; line-height: 1.15; margin-bottom: 48px; }
+.partners-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px 14px; }
+.partner-chip {
+  font-size: 13px; font-weight: 500; letter-spacing: .03em; color: var(--muted);
+  border: 1px solid var(--line); padding: 12px 22px; border-radius: 40px;
+  transition: color .2s, border-color .2s;
+}
+.partner-chip:hover { color: var(--cream); border-color: rgba(242,62,109,.4); }
+
+/* ── FOUNDERS ── */
+.founders { padding: 140px 56px; background: var(--bg3); }
+.founders-top { max-width: 1100px; margin: 0 auto 56px; }
+.founders-label { font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 32px; display: flex; align-items: center; gap: 14px; }
+.founders-label::before { content: ''; width: 32px; height: 1px; background: var(--gold); }
+.founders-top h2 { font-family: var(--serif); font-size: clamp(30px, 4.5vw, 50px); font-weight: 700; letter-spacing: -.03em; line-height: 1.12; max-width: 700px; }
+.founders-top h2 em { font-style: italic; color: var(--gold); }
+.founders-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.founder-card { border: 1px solid var(--line); border-radius: 4px; padding: 36px; background: var(--bg2); display: flex; gap: 22px; align-items: flex-start; transition: border-color .3s; }
+.founder-card:hover { border-color: rgba(242,62,109,.4); }
+.founder-photo {
+  width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0;
+  background: linear-gradient(135deg, #2a2a2a, #3a3a3a); border: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif); font-size: 20px; font-weight: 700; color: var(--gold);
+}
+.founder-name { font-family: var(--serif); font-size: 20px; font-weight: 700; }
+.founder-role { font-size: 12px; color: var(--gold); font-weight: 600; letter-spacing: .04em; text-transform: uppercase; margin-top: 4px; margin-bottom: 14px; }
+.founder-email { display: inline-flex; align-items: center; gap: 8px; color: var(--cream); text-decoration: none; font-size: 13px; border-bottom: 1px solid var(--line); padding-bottom: 2px; transition: color .2s, border-color .2s; }
+.founder-email:hover { color: var(--gold); border-color: var(--gold); }
+
+/* ── AGENTIC ── */
+.agentic { padding: 150px 56px; background: var(--bg); position: relative; overflow: hidden; }
+.agentic-rule { position: absolute; top: 0; bottom: 0; left: 0; width: 40%; border-right: 1px solid var(--line); background: linear-gradient(180deg, transparent, rgba(242,62,109,.03) 50%, transparent); }
+.agentic-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr .8fr; gap: 72px; align-items: center; position: relative; z-index: 1; }
+.agentic-label { font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 28px; display: flex; align-items: center; gap: 14px; }
+.agentic-label::before { content: ''; width: 32px; height: 1px; background: var(--gold); }
+.agentic h2 { font-family: var(--serif); font-size: clamp(32px, 4.5vw, 56px); font-weight: 700; letter-spacing: -.03em; line-height: 1.08; margin-bottom: 22px; }
+.agentic h2 em { font-style: italic; color: var(--gold); }
+.agentic p { font-size: 15px; color: var(--muted); line-height: 1.8; font-weight: 300; max-width: 460px; margin-bottom: 36px; }
+.agentic-btn {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--ink); background: var(--grad); padding: 16px 36px; border-radius: 2px;
+  text-decoration: none; transition: background .2s, transform .2s;
+}
+.agentic-btn:hover { background: var(--grad2); transform: translateY(-2px); }
+.agentic-btn svg { width: 15px; height: 15px; fill: currentColor; }
+.agentic-card {
+  border: 1px solid var(--line); border-radius: 6px; padding: 36px 32px; background: var(--bg2);
+  position: relative; overflow: hidden;
+}
+.agentic-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), transparent); }
+.agentic-card-eyebrow { font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
+.agentic-card h4 { font-family: var(--serif); font-size: 22px; font-weight: 700; margin-bottom: 14px; letter-spacing: -.01em; }
+.agentic-feats { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.agentic-feats li { font-size: 13px; color: var(--muted); font-weight: 300; line-height: 1.5; display: flex; gap: 10px; align-items: flex-start; }
+.agentic-feats li::before { content: '◆'; color: var(--gold); font-size: 9px; margin-top: 4px; flex-shrink: 0; }
+
+/* ── CTA ── */
+.cta-sec { padding: 160px 56px; background: var(--bg3); position: relative; overflow: hidden; border-top: 1px solid var(--line); }
+.cta-inner { max-width: 960px; margin: 0 auto; }
+.cta-label { font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 48px; display: flex; align-items: center; gap: 14px; }
+.cta-label::before { content: ''; width: 32px; height: 1px; background: var(--gold); }
+.cta-headline { font-family: var(--serif); font-size: clamp(34px, 5vw, 64px); font-weight: 700; letter-spacing: -.03em; line-height: 1.1; margin-bottom: 20px; }
+.cta-headline em { font-style: italic; color: var(--gold); }
+.cta-sub { font-size: 16px; color: var(--muted); line-height: 1.75; font-weight: 300; max-width: 520px; margin-bottom: 56px; }
+.cta-contacts { display: flex; gap: 40px; flex-wrap: wrap; }
+.cta-contact { display: flex; flex-direction: column; gap: 6px; }
+.cta-contact-name { font-family: var(--serif); font-size: 18px; font-weight: 700; }
+.cta-contact-role { font-size: 12px; color: var(--muted); letter-spacing: .04em; }
+.cta-contact-email {
+  display: inline-flex; align-items: center; gap: 8px; margin-top: 4px;
+  color: var(--cream); text-decoration: none; font-size: 13px;
+  border-bottom: 1px solid var(--line); padding-bottom: 2px;
+  transition: border-color .2s, color .2s;
+}
+.cta-contact-email:hover { color: var(--gold); border-color: var(--gold); }
+.cta-divider { width: 1px; background: var(--line); align-self: stretch; }
+.cta-btn-row { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 48px; }
+.cta-btn {
+  display: inline-flex;
+  font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--ink); background: var(--grad); padding: 16px 40px; border-radius: 2px;
+  text-decoration: none; transition: background .2s, transform .2s;
+}
+.cta-btn:hover { background: var(--grad2); transform: translateY(-2px); }
+.cta-btn-ghost {
+  display: inline-flex; align-items: center;
+  font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--cream); background: transparent; border: 1px solid var(--line);
+  padding: 16px 40px; border-radius: 2px; text-decoration: none; transition: border-color .2s, color .2s;
+}
+.cta-btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ── FOOTER ── */
+footer {
+  padding: 36px 56px; background: rgba(4,20,34,.55); border-top: 1px solid var(--line);
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+}
+.f-brand { font-family: var(--serif); font-size: 16px; font-weight: 700; }
+.f-mid { font-size: 12px; color: var(--muted); }
+.f-legal { font-size: 11px; color: rgba(245,240,232,.22); text-align: right; line-height: 1.7; }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeInUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeIn   { from{opacity:0} to{opacity:1} }
+.reveal   { opacity:0; transform:translateY(36px); transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1); }
+.reveal-l { opacity:0; transform:translateX(-40px); transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1); }
+.reveal-r { opacity:0; transform:translateX(40px);  transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1); }
+.reveal.vis,.reveal-l.vis,.reveal-r.vis { opacity:1; transform:translate(0); }
+.d1{transition-delay:.1s} .d2{transition-delay:.2s} .d3{transition-delay:.3s} .d4{transition-delay:.4s}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  nav,nav.scrolled{padding:18px 24px}
+  .nav-right .nav-link{display:none}
+  .hero,.statement,.pillars,.framework,.tiers,.outcomes,.numbers,.proof,.diff,.who,.partners,.founders,.agentic,.cta-sec{padding-left:24px;padding-right:24px}
+  .hero{padding-bottom:64px}
+  .hero-bg-word{display:none}
+  .hero-bottom{flex-direction:column;align-items:flex-start;gap:32px}
+  .hero-cta-group{align-items:flex-start}
+  .hero-cta-sub{text-align:left}
+  .pillars-header{flex-direction:column;gap:20px}
+  .pillars-grid{grid-template-columns:1fr}
+  .pillar{border-right:none;border-bottom:1px solid var(--line)}
+  .pillar:last-child{border-bottom:none}
+  .framework-top{grid-template-columns:1fr;gap:20px}
+  .framework-grid{grid-template-columns:repeat(2,1fr)}
+  .fw-cell{border-right:none;border-bottom:1px solid var(--line)}
+  .tiers-grid{grid-template-columns:1fr}
+  .outcomes-top{grid-template-columns:1fr;gap:20px}
+  .outcome-row{grid-template-columns:52px 1fr}
+  .o-desc{display:none}
+  .numbers-inner{grid-template-columns:repeat(2,1fr);gap:32px}
+  .num-cell{border-right:none;padding:0}
+  .proof-top{grid-template-columns:1fr;gap:24px}
+  .proof-grid{grid-template-columns:1fr}
+  .diff-row{grid-template-columns:44px 1fr}
+  .diff-p{display:none}
+  .who-inner{grid-template-columns:1fr;gap:48px}
+  .founders-grid{grid-template-columns:1fr}
+  .agentic-inner{grid-template-columns:1fr;gap:48px}
+  .cta-contacts{flex-direction:column;gap:32px}
+  .cta-divider{display:none}
+  footer{padding:28px 24px;flex-direction:column;align-items:flex-start}
+  .f-legal{text-align:left}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#top" class="nav-logo">
+    <div class="brand-lock">
+      <svg class="brand-cube" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="cubeTop" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#8FDDFF"/><stop offset="1" stop-color="#3AA9EE"/>
+          </linearGradient>
+          <linearGradient id="cubeLeft" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#2E8FD8"/><stop offset="1" stop-color="#0E4C86"/>
+          </linearGradient>
+          <linearGradient id="cubeRight" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#1B6DB8"/><stop offset="1" stop-color="#0A3866"/>
+          </linearGradient>
+        </defs>
+        <path d="M32 5 L57 18.5 L32 32 L7 18.5 Z" fill="url(#cubeTop)"/>
+        <path d="M7 18.5 L32 32 L32 59 L7 45.5 Z" fill="url(#cubeLeft)"/>
+        <path d="M57 18.5 L32 32 L32 59 L57 45.5 Z" fill="url(#cubeRight)"/>
+      </svg>
+      <div class="brand-words">
+        <span class="brand-name">blockverse</span>
+        <span class="brand-tag">Technologies<span class="ai">.ai</span></span>
+      </div>
+    </div>
+  </a>
+  <div class="nav-right">
+    <a href="#approach" class="nav-link">Approach</a>
+    <a href="#proof" class="nav-link">Proof</a>
+    <a href="#outcomes" class="nav-link">Outcomes</a>
+    <a href="#contact" class="nav-cta">Book a Call</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-rule"></div>
+  <div class="hero-bg-word">AI</div>
+  <div class="hero-eyebrow">Workforce Agentic AI Adoption</div>
+  <h1 class="hero-headline">Agentic AI,<br/><em>adopted by your teams.</em></h1>
+  <div class="hero-bottom">
+    <p class="hero-desc">
+      <strong>Not training. Not awareness.</strong><br/>
+      Seamless adoption — your people working alongside AI agents inside their real workflows, with confidence, from week one.
+    </p>
+    <div class="hero-cta-group">
+      <a href="#contact" class="hero-cta-main">Book a Call</a>
+      <span class="hero-cta-sub">Agentic adoption across any function or industry</span>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-bar"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <span>Agents in Real Workflows</span><span class="dot">◆</span>
+    <span>Behavioural First</span><span class="dot">◆</span>
+    <span>Human in the Loop</span><span class="dot">◆</span>
+    <span>Governance by Design</span><span class="dot">◆</span>
+    <span>500+ Professionals Trained</span><span class="dot">◆</span>
+    <span>Adoption from Day One</span><span class="dot">◆</span>
+    <span>Pilot to Production</span><span class="dot">◆</span>
+    <span>Agents in Real Workflows</span><span class="dot">◆</span>
+    <span>Behavioural First</span><span class="dot">◆</span>
+    <span>Human in the Loop</span><span class="dot">◆</span>
+    <span>Governance by Design</span><span class="dot">◆</span>
+    <span>500+ Professionals Trained</span><span class="dot">◆</span>
+    <span>Adoption from Day One</span><span class="dot">◆</span>
+    <span>Pilot to Production</span><span class="dot">◆</span>
+  </div>
+</div>
+
+<!-- STATEMENT -->
+<section class="statement" id="approach">
+  <div class="statement-inner">
+    <div class="s-label reveal">Why It Works</div>
+    <p class="s-quote reveal d1">
+      Most agentic AI programmes focus on the agents.<br/>
+      We focus on the <em>people</em> who work with them.<br/><br/>
+      How they learn. What they fear.<br/>
+      What builds trust in an agent. What makes<br/>
+      adoption <strong>actually stick.</strong>
+    </p>
+    <p class="s-attr reveal d2">Behavioural science meets agentic workflow design · BlockVerse Technologies 2026</p>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section class="pillars">
+  <div class="pillars-header reveal">
+    <h2>Three things that make agentic adoption stick.</h2>
+    <p>No generic demos. No abandoned pilots. No agents nobody trusts.</p>
+  </div>
+  <div class="pillars-grid">
+    <div class="pillar reveal d1">
+      <div class="pillar-fill"></div>
+      <div class="pillar-num">01</div>
+      <h3>Behavioural First</h3>
+      <p>We map how each person learns to trust, brief, and supervise an agent. Adoption is a behaviour, not a deployment.</p>
+    </div>
+    <div class="pillar reveal d2">
+      <div class="pillar-fill"></div>
+      <div class="pillar-num">02</div>
+      <h3>Workflow Mapped</h3>
+      <p>Every session is built around real tasks, decisions, and roles. Agents slot directly into the work your people already do.</p>
+    </div>
+    <div class="pillar reveal d3">
+      <div class="pillar-fill"></div>
+      <div class="pillar-num">03</div>
+      <h3>Pilot to Production</h3>
+      <p>We do not stop at workshops. We identify high-impact agentic use cases, run pilots, measure outcomes, and scale what works.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FRAMEWORK -->
+<section class="framework">
+  <div class="framework-top">
+    <h2 class="reveal">How agents enter<br/>the workforce.</h2>
+    <p class="reveal d1">One clear model for where agentic AI fits — from a first assisted task to fully orchestrated workflows your teams trust and oversee.</p>
+  </div>
+  <div class="framework-grid">
+    <div class="fw-cell reveal d1">
+      <div class="fw-letter">1</div>
+      <div class="fw-title">Assist</div>
+      <ul class="fw-items">
+        <li>Agents support real tasks</li>
+        <li>Person stays in control</li>
+        <li>Confidence builds early</li>
+      </ul>
+      <span class="fw-tag">Trust · Confidence</span>
+    </div>
+    <div class="fw-cell reveal d2">
+      <div class="fw-letter">2</div>
+      <div class="fw-title">Automate</div>
+      <ul class="fw-items">
+        <li>Repetitive steps handed off</li>
+        <li>Clear briefs and guardrails</li>
+        <li>Time returned to people</li>
+      </ul>
+      <span class="fw-tag">Hand-off · Time</span>
+    </div>
+    <div class="fw-cell reveal d3">
+      <div class="fw-letter">3</div>
+      <div class="fw-title">Orchestrate</div>
+      <ul class="fw-items">
+        <li>Agents run multi-step work</li>
+        <li>Connected across tools</li>
+        <li>Embedded in real workflows</li>
+      </ul>
+      <span class="fw-tag">Workflow · Scale</span>
+    </div>
+    <div class="fw-cell reveal d4">
+      <div class="fw-letter">4</div>
+      <div class="fw-title">Oversee</div>
+      <ul class="fw-items">
+        <li>Human in the loop</li>
+        <li>Governance and accountability</li>
+        <li>Safe, responsible adoption</li>
+      </ul>
+      <span class="fw-tag">Governance · Trust</span>
+    </div>
+  </div>
+</section>
+
+<!-- TIERS -->
+<section class="tiers">
+  <div class="tiers-top">
+    <div class="tiers-label reveal">Agentic Adoption at Every Level</div>
+    <h2 class="reveal d1">One programme.<br/>Three levels of <em>adoption.</em></h2>
+  </div>
+  <div class="tiers-grid">
+    <div class="tier-card reveal d1">
+      <div class="tier-num">1</div>
+      <h3>Leaders Set Direction</h3>
+      <p>Leaders gain the confidence to decide where agents add value, set guardrails, and govern agentic adoption with independence.</p>
+    </div>
+    <div class="tier-card reveal d2">
+      <div class="tier-num">2</div>
+      <h3>Teams Work With Agents</h3>
+      <p>People learn to brief, supervise, and trust agents inside the workflows they already own — lifting output without losing control.</p>
+    </div>
+    <div class="tier-card reveal d3">
+      <div class="tier-num">3</div>
+      <h3>A Shared Capability</h3>
+      <p>Agentic AI spreads through culture and shared habits — not isolated experiments that fade after a single workshop.</p>
+    </div>
+  </div>
+</section>
+
+<!-- OUTCOMES -->
+<section class="outcomes" id="outcomes">
+  <div class="outcomes-top">
+    <h2 class="reveal">What shifts when agents<br/>join the <em>workforce.</em></h2>
+    <p class="reveal d1">Based on adoption outcomes observed across pharma, consumer goods, financial services, and HR functions.</p>
+  </div>
+  <div class="outcomes-rows">
+    <div class="outcome-row reveal">
+      <div class="o-num">01</div>
+      <div class="o-title">From scattered agent pilots to structured adoption</div>
+      <div class="o-desc">Siloed experiments give way to a shared approach with clear governance and agents embedded in real workflows.</div>
+    </div>
+    <div class="outcome-row reveal d1">
+      <div class="o-num">02</div>
+      <div class="o-title">People who can brief, supervise, and trust agents</div>
+      <div class="o-desc">Teams develop the habits and confidence to direct agents responsibly — and know exactly when to keep a human in the loop.</div>
+    </div>
+    <div class="outcome-row reveal d2">
+      <div class="o-num">03</div>
+      <div class="o-title">Repetitive work handed to agents, safely</div>
+      <div class="o-desc">Multi-step admin moves to agents while skilled people reinvest their time in interpretation, strategy, and collaboration.</div>
+    </div>
+    <div class="outcome-row reveal d3">
+      <div class="o-num">04</div>
+      <div class="o-title">Agentic use cases grounded in real workflows</div>
+      <div class="o-desc">Teams leave with pilot-ready opportunities — mapped against actual data, risk levels, and business impact.</div>
+    </div>
+    <div class="outcome-row reveal d4">
+      <div class="o-num">05</div>
+      <div class="o-title">Agentic AI becomes a shared workforce capability</div>
+      <div class="o-desc">Not an isolated experiment or a distant initiative. A living capability that grows across functions and teams.</div>
+    </div>
+  </div>
+</section>
+
+<!-- NUMBERS -->
+<section class="numbers">
+  <div class="numbers-inner">
+    <div class="num-cell reveal">
+      <div class="num-val">500+</div>
+      <div class="num-label">Professionals trained</div>
+    </div>
+    <div class="num-cell reveal d1">
+      <div class="num-val">4.75<span style="font-size:.5em;color:var(--muted)">/5</span></div>
+      <div class="num-label">Average workshop rating</div>
+    </div>
+    <div class="num-cell reveal d2">
+      <div class="num-val">85%</div>
+      <div class="num-label">Applied AI to work within one week</div>
+    </div>
+    <div class="num-cell reveal d3">
+      <div class="num-val">100%</div>
+      <div class="num-label">Corporate programmes led to pilots</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="proof" id="proof">
+  <div class="proof-top">
+    <div>
+      <div class="proof-label reveal">Proof in the Field</div>
+      <h2 class="reveal d1">Adoption that moved<br/>into <em>real workflows.</em></h2>
+    </div>
+    <p class="reveal d2">A snapshot of how global teams moved from fragmented AI experiments to structured, responsible, agent-ready adoption inside their day-to-day work.</p>
+  </div>
+  <div class="proof-grid">
+    <div class="case-card reveal d1">
+      <span class="case-tag">Global Pharma · Regulated</span>
+      <h3>Agent-ready adoption for cross-functional pharma teams</h3>
+      <p>Teams across Regulatory, Quality, R&amp;D, and Commercial moved beyond siloed trials toward responsible adoption — with governance, source validation, and human accountability built in around the agents.</p>
+      <div class="case-result">
+        <div class="case-result-item">
+          <div class="case-result-val">Pilot-ready</div>
+          <div class="case-result-label">Use cases from real workflows</div>
+        </div>
+        <div class="case-result-item">
+          <div class="case-result-val">Human-led</div>
+          <div class="case-result-label">Oversight by design</div>
+        </div>
+      </div>
+    </div>
+    <div class="case-card reveal d2">
+      <span class="case-tag">Consumer Goods · HR &amp; Business</span>
+      <h3>Workforce adoption for HR and people teams</h3>
+      <p>HR teams handed repetitive, multi-step admin to AI and reinvested the time in strategy, talent, and culture — with clear rules for where agents help and where people stay in charge.</p>
+      <div class="case-result">
+        <div class="case-result-item">
+          <div class="case-result-val">Less admin</div>
+          <div class="case-result-label">More strategic contribution</div>
+        </div>
+        <div class="case-result-item">
+          <div class="case-result-val">Responsible</div>
+          <div class="case-result-label">Governance-aware adoption</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENTIATORS -->
+<section class="diff">
+  <div class="diff-top">
+    <div class="diff-label reveal">Why Organisations Choose BlockVerse</div>
+    <h2 class="reveal d1">Working agents —<br/>not frameworks on a shelf.</h2>
+  </div>
+  <div class="diff-rows">
+    <div class="diff-row reveal">
+      <div class="diff-num">01</div>
+      <div class="diff-h">Co-created on your real work</div>
+      <div class="diff-p">Agentic use cases are built around your actual tasks, data, and workflows — not retrofitted generic examples.</div>
+    </div>
+    <div class="diff-row reveal d1">
+      <div class="diff-num">02</div>
+      <div class="diff-h">Led by practitioners</div>
+      <div class="diff-p">Sessions are run by people who have owned real outcomes, not career consultants selling theory.</div>
+    </div>
+    <div class="diff-row reveal d2">
+      <div class="diff-num">03</div>
+      <div class="diff-h">Measured by adoption</div>
+      <div class="diff-p">We track whether people actually use the agents in day-to-day work — not attendance or satisfaction scores.</div>
+    </div>
+    <div class="diff-row reveal d3">
+      <div class="diff-num">04</div>
+      <div class="diff-h">Built to reach production</div>
+      <div class="diff-p">Where others stop at training, we move high-impact agentic use cases into pilots and into production.</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO -->
+<section class="who">
+  <div class="who-inner">
+    <div class="who-left">
+      <div class="who-label reveal">Who We Work With</div>
+      <h2 class="reveal d1">Any function.<br/>Any sector.<br/><em>Real work.</em></h2>
+      <p class="reveal d2">We have built agentic AI adoption programmes for teams across highly regulated industries and fast-moving commercial environments. The approach adapts. The outcomes do not.</p>
+    </div>
+    <div class="who-roles reveal-r">
+      <div class="who-role">HR and People Teams <span class="arr">→</span></div>
+      <div class="who-role">Regulatory and Quality Functions <span class="arr">→</span></div>
+      <div class="who-role">Commercial and Sales Teams <span class="arr">→</span></div>
+      <div class="who-role">Finance and Operations <span class="arr">→</span></div>
+      <div class="who-role">Leadership and Executive Groups <span class="arr">→</span></div>
+      <div class="who-role">Cross-Functional Cohorts <span class="arr">→</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="partners">
+  <div class="partners-inner">
+    <div class="partners-label reveal">Trusted by Global Teams &amp; Institutions</div>
+    <h2 class="reveal d1">500+ professionals trained across 7 companies and institutions.</h2>
+    <div class="partners-list reveal d2">
+      <span class="partner-chip">Google</span>
+      <span class="partner-chip">Deloitte</span>
+      <span class="partner-chip">Signify</span>
+      <span class="partner-chip">CompTIA</span>
+      <span class="partner-chip">Sun Pharma</span>
+      <span class="partner-chip">General Mills</span>
+      <span class="partner-chip">Government of the Netherlands</span>
+      <span class="partner-chip">XtraAdvice</span>
+      <span class="partner-chip">International Women in Tech</span>
+      <span class="partner-chip">Polish Professional Women</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDERS -->
+<section class="founders">
+  <div class="founders-top">
+    <div class="founders-label reveal">The People Behind the Programme</div>
+    <h2 class="reveal d1">Practitioners who have owned <em>real outcomes.</em></h2>
+  </div>
+  <div class="founders-grid">
+    <div class="founder-card reveal d1">
+      <div class="founder-photo">GG</div>
+      <div>
+        <div class="founder-name">Gaurav Gupta</div>
+        <div class="founder-role">Founder &amp; CEO</div>
+        <a href="mailto:Gaurav@blockverseacademy.com" class="founder-email">Gaurav@blockverseacademy.com</a>
+      </div>
+    </div>
+    <div class="founder-card reveal d2">
+      <div class="founder-photo">NV</div>
+      <div>
+        <div class="founder-name">Nimish Vasishta</div>
+        <div class="founder-role">Co-Founder &amp; Investor</div>
+        <a href="mailto:Nimish@blockverseacademy.com" class="founder-email">Nimish@blockverseacademy.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AGENTIC -->
+<section class="agentic" id="agentic">
+  <div class="agentic-rule"></div>
+  <div class="agentic-inner">
+    <div class="agentic-left">
+      <div class="agentic-label reveal">From Adoption to Agents</div>
+      <h2 class="reveal d1">Then we build<br/><em>your agents.</em></h2>
+      <p class="reveal d2">Adoption and agents go hand in hand. As your teams get fluent, we build the agentic systems that run inside their real workflows — end to end, on our custom agentic platform.</p>
+      <!-- TODO: replace href="#" with your custom agentic website URL -->
+      <a href="#" class="agentic-btn reveal d3">
+        Explore Custom Agents
+        <svg viewBox="0 0 24 24"><path d="M5 12h12.17l-5.59-5.59L13 5l8 8-8 8-1.41-1.41L17.17 13H5z"/></svg>
+      </a>
+    </div>
+    <div class="agentic-card reveal-r d1">
+      <div class="agentic-card-eyebrow">Custom Agentic Platform</div>
+      <h4>Agents your workforce actually uses</h4>
+      <ul class="agentic-feats">
+        <li>Agents mapped to your real tasks and decisions</li>
+        <li>Built on the workflows your teams already adopted</li>
+        <li>Governance and human oversight by design</li>
+        <li>Pilot-ready, then scaled into production</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec" id="contact">
+  <div class="cta-inner">
+    <div class="cta-label reveal">Ready to Make Agentic AI Seamless</div>
+    <h2 class="cta-headline reveal d1">Let us bring agents<br/>to <em>your workforce.</em></h2>
+    <p class="cta-sub reveal d2">Every programme starts with understanding your organisation. Book a call and tell us who your teams are and where agents could help — we will shape the agentic adoption journey around it.</p>
+    <div class="cta-contacts reveal d2">
+      <div class="cta-contact">
+        <div class="cta-contact-name">Gaurav Gupta</div>
+        <div class="cta-contact-role">Founder and CEO</div>
+        <a href="mailto:Gaurav@blockverseacademy.com" class="cta-contact-email">Gaurav@blockverseacademy.com</a>
+      </div>
+      <div class="cta-divider"></div>
+      <div class="cta-contact">
+        <div class="cta-contact-name">Nimish Vasishta</div>
+        <div class="cta-contact-role">Co-Founder and Investor</div>
+        <a href="mailto:Nimish@blockverseacademy.com" class="cta-contact-email">Nimish@blockverseacademy.com</a>
+      </div>
+    </div>
+    <div class="cta-btn-row reveal d3">
+      <a href="mailto:Gaurav@blockverseacademy.com?subject=Workforce%20Agentic%20AI%20Adoption%20%E2%80%94%20Book%20a%20Call" class="cta-btn">Book a Call</a>
+      <!-- TODO: replace href="#" with your custom agentic website URL -->
+      <a href="#" class="cta-btn-ghost">Explore Custom Agents →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-brand">blockverse Technologies<span style="color:var(--gold)">.ai</span></div>
+  <div class="f-mid">blockverseacademy.com</div>
+  <div class="f-legal">BlockVerse Technologies BV · KvK 86755730 · VAT NL864077014B01<br/>© 2026 All rights reserved</div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60), { passive: true });
+
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); io.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal, .reveal-l, .reveal-r').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
