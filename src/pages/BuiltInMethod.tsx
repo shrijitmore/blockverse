@@ -37,7 +37,7 @@ export function BuiltInMethod() {
                 <b>Built into work.</b> <span className="b-grad">Not bolted on.</span>
               </p>
             </div>
-            <img className="b-boy" src="/assets/hero-boy.png" alt="A child enjoying ice cream — no manual required" />
+            <img className="b-boy" src="/assets/BoyTransparent.png" alt="A child enjoying ice cream — no manual required" />
           </div>
         </header>
 
