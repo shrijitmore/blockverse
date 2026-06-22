@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { NAV_LINKS } from '../data'
 
 const LINK_ROUTES: Record<string, string> = {
-  'What We Do': '/industries',
+  'What We Do': '/#how',
   'Built-In Method': '/built-in-method',
   'About Us': '/about',
   'Agentic AI Systems': 'https://agentic.blockversetechnologies.ai/',
