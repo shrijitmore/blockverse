@@ -48,10 +48,9 @@ export function AboutHero() {
             data-ab-anim="fade-up"
             data-ab-delay="0.3"
           >
-            Driving{' '}
-            <span className="ab-hero__title-accent">AI Adoption</span>
-            <br />
-            Across Leadership, Teams &amp; Workflows
+            AI adoption across{' '}
+            <span className="ab-hero__title-accent">leaders, teams and workflows</span> — built into how your business
+            actually runs.
           </h1>
         </div>
       </div>
