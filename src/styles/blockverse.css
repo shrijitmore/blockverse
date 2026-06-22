@@ -354,7 +354,7 @@ footer {
 
 .headline {
   font-family: 'League Spartan', sans-serif;
-  font-weight: 900;
+  font-weight: 600;
   font-size: clamp(46px, 5.6vw, 74px);
   line-height: 1.0;
   letter-spacing: -1.5px;
