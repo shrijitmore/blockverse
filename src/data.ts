@@ -501,10 +501,24 @@ export const MARQUEE_ROWS: { reverse?: boolean; logos: { name: string; src: stri
     ],
   },
 ]
-export const FOOTER_COLUMNS = [
-  { title: 'Company', links: ['About Us', 'Careers', 'Case Studies', 'Contact'] },
-  { title: 'Solutions', links: ['Businesses', 'Individuals', 'Programs', 'Pricing'] },
-  { title: 'Resources', links: ['Blog', 'Guides', 'Security', 'Support'] },
+export const FOOTER_COLUMNS: { title: string; links: { label: string; to: string }[] }[] = [
+  {
+    title: 'Company',
+    links: [
+      { label: 'About Us', to: '/about' },
+      { label: 'Built-In Method', to: '/built-in-method' },
+      { label: 'Contact', to: '/#contact' },
+    ],
+  },
+  {
+    title: 'Explore',
+    links: [
+      { label: 'What We Do', to: '/#how' },
+      { label: 'Executive AI Capability', to: '/executive-ai-capability' },
+      { label: 'AI Adoption for Teams', to: '/workforce-ai-adoption' },
+      { label: 'Agentic AI Systems', to: 'https://agentic.blockversetechnologies.ai/' },
+    ],
+  },
 ]
 
 export const PARTICLES: { left: string; size: number; dur: number; delay: number; tint?: 'pink' | 'amber' }[] = [

@@ -1,5 +1,7 @@
-import { SocialLinks } from '../components/icons'
+import { Link } from 'react-router-dom'
 import { FOOTER_COLUMNS } from '../data'
+
+const isExternal = (href: string) => /^https?:\/\//.test(href)
 
 export function Footer() {
   return (
@@ -10,12 +12,12 @@ export function Footer() {
         </h2>
         <p>Customized AI adoption, architected for how your business actually runs — not bolted on after.</p>
         <div className="btns">
-          <a href="#contact" className="btn btn-demo">
+          <Link to="/#contact" className="btn btn-demo">
             Book a Demo
-          </a>
-          <a href="#contact" className="btn btn-learn">
+          </Link>
+          <Link to="/#contact" className="btn btn-learn">
             Book a Call
-          </a>
+          </Link>
         </div>
       </div>
 
@@ -23,28 +25,28 @@ export function Footer() {
         <div className="foot-brand">
           <img className="logo" src="/assets/logo.png" alt="Blockverse Technologies.ai" />
           <p>We help companies adopt AI and embed it in their real work.</p>
-          <SocialLinks kinds={['linkedin', 'x', 'youtube']} className="foot-soc" />
         </div>
 
         {FOOTER_COLUMNS.map((col) => (
           <div className="foot-col" key={col.title}>
             <h4>{col.title}</h4>
-            {col.links.map((link) => (
-              <a href="#" key={link}>
-                {link}
-              </a>
-            ))}
+            {col.links.map((link) =>
+              isExternal(link.to) ? (
+                <a href={link.to} key={link.label} target="_blank" rel="noopener noreferrer">
+                  {link.label}
+                </a>
+              ) : (
+                <Link to={link.to} key={link.label}>
+                  {link.label}
+                </Link>
+              ),
+            )}
           </div>
         ))}
       </div>
 
       <div className="foot-bottom">
         <span>&copy; 2026 Blockverse Technologies. All rights reserved.</span>
-        <div className="legal">
-          <a href="#">Privacy</a>
-          <a href="#">Terms</a>
-          <a href="#">Security</a>
-        </div>
         <span className="tag">Built in, not bolted on.</span>
       </div>
 

@@ -13,9 +13,12 @@ import { Statement } from './sections/Statement'
 export function Landing() {
   const { hash } = useLocation()
 
-  // Support /#contact links from inner pages (router navigation skips native anchor scroll)
+  // Support /#how and /#contact links (from inner pages or direct load) — wait a tick for layout.
   useEffect(() => {
-    if (hash) document.querySelector(hash)?.scrollIntoView({ behavior: 'smooth' })
+    if (!hash) return
+    const id = hash.slice(1)
+    const t = setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }), 60)
+    return () => clearTimeout(t)
   }, [hash])
 
   return (
