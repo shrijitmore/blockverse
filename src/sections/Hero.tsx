@@ -69,7 +69,7 @@ export function Hero() {
 
           <div className="cta-row">
             <a href="https://agentic.blockversetechnologies.ai/" target="_blank" rel="noopener" className="btn btn-agentic">
-              Agentic AI
+              Our Agentic Systems
             </a>
           </div>
 

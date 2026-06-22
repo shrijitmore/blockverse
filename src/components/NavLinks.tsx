@@ -6,7 +6,7 @@ const LINK_ROUTES: Record<string, string> = {
   'What We Do': '/#how',
   'Built-In Method': '/built-in-method',
   'About Us': '/about',
-  'Agentic AI Systems': 'https://agentic.blockversetechnologies.ai/',
+  'Our Agentic Systems': 'https://agentic.blockversetechnologies.ai/',
 }
 
 const isExternal = (href: string) => /^https?:\/\//.test(href)

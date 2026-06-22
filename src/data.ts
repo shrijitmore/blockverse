@@ -1,4 +1,4 @@
-export const NAV_LINKS = ['What We Do', 'Built-In Method', 'About Us', 'Agentic AI Systems']
+export const NAV_LINKS = ['What We Do', 'Built-In Method', 'About Us', 'Our Agentic Systems']
 
 export const HEADLINE_LINES = [
   { text: 'Customised', accent: 'Ai', delay: '.45s' },
@@ -516,7 +516,7 @@ export const FOOTER_COLUMNS: { title: string; links: { label: string; to: string
       { label: 'What We Do', to: '/#how' },
       { label: 'Executive AI Capability', to: '/executive-ai-capability' },
       { label: 'AI Adoption for Teams', to: '/workforce-ai-adoption' },
-      { label: 'Agentic AI Systems', to: 'https://agentic.blockversetechnologies.ai/' },
+      { label: 'Our Agentic Systems', to: 'https://agentic.blockversetechnologies.ai/' },
     ],
   },
 ]
