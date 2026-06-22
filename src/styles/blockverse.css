@@ -354,8 +354,8 @@ footer {
 
 .headline {
   font-family: 'League Spartan', sans-serif;
-  font-weight: 600;
-  font-size: clamp(46px, 5.6vw, 74px);
+  font-weight: 700;
+  font-size: clamp(52px, 6.4vw, 86px);
   margin-top: clamp(24px, 6vh, 84px);
   line-height: 1.0;
   letter-spacing: -1.5px;
@@ -399,6 +399,7 @@ footer {
 .headline-tag .line.spaced .tag-accent {
   letter-spacing: normal;
   text-transform: none;
+  margin-left: -0.45em;
 }
 
 .headline-tag .tag-accent {
@@ -425,7 +426,9 @@ footer {
   font-weight: 800;
   border: none;
   border-radius: 999px;
-  padding: 14px 32px;
+  width: clamp(150px, 16vw, 248px);
+  justify-content: center;
+  padding: 14px 24px;
   box-shadow: 0 12px 30px rgba(70, 110, 220, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.35);
 }
 
@@ -487,7 +490,7 @@ footer {
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.92);
   max-width: 460px;
-  margin-top: auto;
+  margin-top: clamp(16px, 2.4vh, 30px);
   margin-left: 0;
   margin-right: auto;
   text-align: left;

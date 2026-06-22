@@ -1,9 +1,7 @@
-import { Fragment, useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { HEADLINE_LINES, HERO_BUILT, HERO_NOT_BOLTED, HERO_SUB } from '../data'
+import { HEADLINE_LINES, HERO_BUILT, HERO_NOT_BOLTED } from '../data'
 import { NavLinks } from '../components/NavLinks'
-
-const SUB_PARTS = HERO_SUB.split(/(AI)/)
 
 export function Hero() {
   const photoRef = useRef<HTMLImageElement>(null)
@@ -76,15 +74,9 @@ export function Hero() {
           </div>
 
           <p className="sub">
-            {SUB_PARTS.map((part, i) =>
-              part === 'AI' ? (
-                <span className="grad-in" key={i}>
-                  Ai
-                </span>
-              ) : (
-                <Fragment key={i}>{part}</Fragment>
-              ),
-            )}
+            We help companies adopt <span className="grad-in">Ai</span>
+            <br />
+            and embed it in their real work
           </p>
         </div>
 
