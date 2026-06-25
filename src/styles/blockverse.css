@@ -2572,14 +2572,18 @@ body.anim .hero-learn {
     width: min(78%, 360px);
     height: auto;
     max-height: none;
-    margin: clamp(8px, 2vh, 20px) auto -28px;
+    margin: clamp(8px, 2vh, 20px) auto -60px;
+    z-index: 1;
     transform: scaleX(-1);
     opacity: 1;
   }
 
-  /* Our Agentic Systems button, after the photo */
+  /* Our Agentic Systems button, after the photo — sits above the
+     photo's overlap zone (z-index) so it stays readable. */
   .cta-row {
     order: 5;
+    position: relative;
+    z-index: 2;
     width: 100%;
     justify-content: center;
     margin-top: 0;
