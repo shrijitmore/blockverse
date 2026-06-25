@@ -26,8 +26,10 @@ export function Statement() {
 
   return (
     <section className="reveal-section" ref={sectionRef} data-screen-label="Statement">
-      <div className="glow c" aria-hidden="true" />
-      <div className="glow d" aria-hidden="true" />
+      <div className="glow-clip" aria-hidden="true">
+        <div className="glow c" />
+        <div className="glow d" />
+      </div>
       <div className="reveal-sticky">
         <p className="statement">
           {WORDS.map((word, i) => (

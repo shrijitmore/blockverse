@@ -18,8 +18,10 @@ export function Gap() {
 
   return (
     <section className="reveal-section" ref={sectionRef} data-screen-label="Gap">
-      <div className="glow c" aria-hidden="true" />
-      <div className="glow d" aria-hidden="true" />
+      <div className="glow-clip" aria-hidden="true">
+        <div className="glow c" />
+        <div className="glow d" />
+      </div>
       <div className="reveal-sticky">
         <div className="gap-block">
           <span className="gap-kicker">{w('The reality')}</span>

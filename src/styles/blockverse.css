@@ -23,15 +23,14 @@
   initial-value: 0deg;
 }
 
-html {
-  overflow-x: hidden;
-}
-
 body {
   color: var(--ink);
   background: radial-gradient(125% 90% at 32% 22%, var(--blue-bright) 0%, var(--blue-mid) 46%, var(--blue-deep) 100%);
   background-attachment: fixed;
-  overflow-x: hidden;
+  /* `clip` (not `hidden`) — `overflow-x:hidden` forces overflow-y to
+     compute as `auto` per spec, turning body into a scroll container
+     and breaking position:sticky descendants (Statement/Gap reveal). */
+  overflow-x: clip;
 }
 
 main {
@@ -573,6 +572,17 @@ body.anim .hero-learn {
   position: relative;
   height: 220vh;
   z-index: 1;
+}
+
+/* Sibling of .reveal-sticky (not its ancestor) so clipping the ambient
+   glow blobs never sits in the sticky element's containing-block chain
+   — overflow on an ancestor can disable position:sticky in WebKit. */
+.glow-clip {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .glow {
@@ -2887,9 +2897,11 @@ body.anim .hero-learn {
 .page-glow {
   position: fixed;
   top: -180px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(560px, 100vw);
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  max-width: 560px;
+  width: 560px;
   height: 560px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(31, 123, 224, 0.35) 0%, transparent 70%);

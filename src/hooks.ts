@@ -41,21 +41,40 @@ export function useWordReveal<T extends HTMLElement = HTMLElement>() {
       })
     }
 
-    let ticking = false
-    const onScroll = () => {
-      if (ticking) return
-      ticking = true
-      requestAnimationFrame(() => {
-        update()
-        ticking = false
-      })
+    let raf = 0
+    const loop = () => {
+      update()
+      raf = requestAnimationFrame(loop)
     }
 
     update()
-    window.addEventListener('scroll', onScroll, { passive: true })
+
+    // Mobile browsers coalesce/throttle `scroll` events heavily during
+    // momentum scrolling, which can freeze a scroll-driven reveal mid-fade.
+    // Run a continuous rAF loop instead, but only while the section is
+    // actually in view, so it's free the rest of the time.
+    const sec = sectionRef.current
+    let io: IntersectionObserver | undefined
+    if (sec && !reduce) {
+      io = new IntersectionObserver(
+        (entries) => {
+          const visible = entries[0]?.isIntersecting
+          if (visible && !raf) {
+            raf = requestAnimationFrame(loop)
+          } else if (!visible && raf) {
+            cancelAnimationFrame(raf)
+            raf = 0
+          }
+        },
+        { threshold: 0 },
+      )
+      io.observe(sec)
+    }
+
     window.addEventListener('resize', update)
     return () => {
-      window.removeEventListener('scroll', onScroll)
+      if (raf) cancelAnimationFrame(raf)
+      io?.disconnect()
       window.removeEventListener('resize', update)
     }
   }, [])
