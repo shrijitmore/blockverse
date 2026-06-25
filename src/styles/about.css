@@ -749,6 +749,14 @@
   overflow: hidden;
   background: url('/assets/about/cta-bg.jpg') center / cover no-repeat;
 }
+.ab-join::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(155deg, rgba(2,9,28,.88) 0%, rgba(1,20,45,.8) 50%, rgba(2,9,28,.9) 100%);
+}
 .ab-join__orb {
   position: absolute;
   border-radius: 50%;
@@ -810,6 +818,29 @@
   .ab-geo__stats { gap: 32px; }
   .ab-geo__stat-divider { display: none; }
   .ab-geo__map { height: 360px; }
+
+  .ab-join {
+    padding: 90px 0;
+  }
+
+  .ab-join__cta {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .ab-join__cta .btn {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .ab-hero__title {
+    padding: 0 8px;
+  }
+
+  .ab-intro {
+    padding: 72px 0 32px;
+  }
 }
 
 /* ═══════════════════════════════════════════════

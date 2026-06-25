@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { HEADLINE_LINES, HERO_BUILT, HERO_NOT_BOLTED } from '../data'
 import { NavLinks } from '../components/NavLinks'
+import { MobileMenu } from '../components/MobileMenu'
 
 export function Hero() {
   const photoRef = useRef<HTMLImageElement>(null)
@@ -45,9 +46,10 @@ export function Hero() {
         <nav>
           <NavLinks />
         </nav>
-        <a href="#contact" className="btn btn-call">
+        <a href="#contact" className="btn btn-call nav-book">
           Book a Call
         </a>
+        <MobileMenu />
       </header>
 
       <div className="hero-inner">
@@ -61,16 +63,16 @@ export function Hero() {
             ))}
           </h1>
 
-          <p className="headline-tag">
-            <span className="line spaced" style={{ animationDelay: HERO_BUILT.delay }}>
-              {HERO_BUILT.lead} <span className="tag-accent">{HERO_BUILT.accent}</span>
-            </span>
-          </p>
-
-          <div className="cta-row">
-            <a href="https://agentic.blockversetechnologies.ai/" target="_blank" rel="noopener" className="btn btn-agentic">
-              Our Agentic Systems
-            </a>
+          <div className="hero-tags-row">
+            <p className="headline-tag">
+              <span className="line spaced" style={{ animationDelay: HERO_BUILT.delay }}>
+                {HERO_BUILT.lead} <span className="tag-accent">{HERO_BUILT.accent}</span>
+              </span>
+            </p>
+            <p className="hero-bolted" style={{ animationDelay: HERO_NOT_BOLTED.delay }}>
+              <span>{HERO_NOT_BOLTED.l1}</span>
+              <span>{HERO_NOT_BOLTED.l2}</span>
+            </p>
           </div>
 
           <p className="sub">
@@ -78,10 +80,16 @@ export function Hero() {
             <br />
             and embed it in their real work
           </p>
+
+          <div className="cta-row">
+            <a href="https://agentic.blockversetechnologies.ai/" target="_blank" rel="noopener" className="btn btn-agentic">
+              Our Agentic Systems
+            </a>
+          </div>
         </div>
 
         <div className="hero-right">
-          <p className="hero-bolted" style={{ animationDelay: HERO_NOT_BOLTED.delay }}>
+          <p className="hero-bolted hero-bolted--desktop" style={{ animationDelay: HERO_NOT_BOLTED.delay }}>
             <span>{HERO_NOT_BOLTED.l1}</span>
             <span>{HERO_NOT_BOLTED.l2}</span>
           </p>

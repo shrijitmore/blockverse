@@ -56,6 +56,7 @@ export const BENTO_CARDS: BentoCard[] = [
 export type Layer = {
   tabNo: string
   tabLabel: string
+  tabShort: string
   layerNum: string
   headline: string
   emphasis: string
@@ -70,6 +71,7 @@ export const LAYERS: Layer[] = [
   {
     tabNo: '01',
     tabLabel: 'Leaders — Executive Fluency',
+    tabShort: 'Leaders',
     layerNum: 'Layer 01 — Executive Fluency',
     headline: 'Fluent at the top.',
     emphasis: 'Confident everywhere.',
@@ -82,6 +84,7 @@ export const LAYERS: Layer[] = [
   {
     tabNo: '02',
     tabLabel: 'Teams — Workforce Adoption',
+    tabShort: 'Teams',
     layerNum: 'Layer 02 — Workforce Adoption',
     headline: 'Adoption that sticks —',
     emphasis: 'because it fits the work.',
@@ -94,6 +97,7 @@ export const LAYERS: Layer[] = [
   {
     tabNo: '03',
     tabLabel: 'Agentic AI Workflows',
+    tabShort: 'Agentic AI Workflows',
     layerNum: 'Layer 03 — Workflows',
     headline: 'Built in, not bolted on.',
     emphasis: "When it's built in, it gets used.",

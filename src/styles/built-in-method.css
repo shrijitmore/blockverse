@@ -274,10 +274,7 @@
   color: var(--b-ink);
 }
 .b-col.b-built h4 {
-  background: var(--b-grad-cta);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: #fff;
 }
 .b-col.b-built li::before {
   content: '\2713';

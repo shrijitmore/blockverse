@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { NavLinks } from './NavLinks'
+import { MobileMenu } from './MobileMenu'
 
 /** Fixed top nav for inner pages (About, Industries) — logo links back to the landing page. */
 export function SiteNav() {
@@ -21,9 +22,10 @@ export function SiteNav() {
       <nav>
         <NavLinks />
       </nav>
-      <Link to="/#contact" className="btn btn-call">
+      <Link to="/#contact" className="btn btn-call nav-book">
         Book a Call
       </Link>
+      <MobileMenu />
     </header>
   )
 }

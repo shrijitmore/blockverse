@@ -18,11 +18,14 @@ export function Layers() {
             type="button"
             role="tab"
             data-i={i}
+            data-short={l.tabShort}
             className={`tab${i === active ? ' is-active' : ''}`}
             aria-selected={i === active}
             onClick={() => setActive(i)}
           >
-            <span className="tab-no">{l.tabNo}</span> {l.tabLabel}
+            <span className="tab-no">{l.tabNo}</span>{' '}
+            <span className="tab-label-full">{l.tabLabel}</span>
+            <span className="tab-label-short">{l.tabShort}</span>
             <span className="tab-progress" />
           </button>
         ))}
