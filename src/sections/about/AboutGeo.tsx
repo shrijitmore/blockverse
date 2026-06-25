@@ -3,7 +3,7 @@ import 'jsvectormap/dist/jsvectormap.css'
 
 const STATS = [
   { num: 'HQ', label: 'Netherlands', sub: 'KvK 86755730\nVAT: NL864077014B01' },
-  { num: '8', label: 'Global Markets', sub: 'Active clients and partners\nacross 4 continents.' },
+  { num: '8', label: 'Active Global Markets', sub: 'Active clients and partners\nacross 4 continents.' },
   { num: '8+', label: 'Industries Live', sub: 'Finance, Healthcare, Real Estate,\nEdTech, Logistics & more.' },
 ]
 

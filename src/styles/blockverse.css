@@ -496,7 +496,7 @@ footer {
 }
 
 .sub {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-size: clamp(19px, 1.9vw, 27px);
   font-weight: 600;
@@ -1236,13 +1236,19 @@ body.anim .hero-learn {
 }
 
 .panel-head em {
-  font-style: italic;
+  font-style: normal;
   font-weight: 800;
   background: var(--grad-cta);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
+}
+
+@media (max-width: 760px) {
+  .panel-head em {
+    font-style: italic;
+  }
 }
 
 .panel-text {

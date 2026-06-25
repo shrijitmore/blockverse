@@ -7,21 +7,6 @@ const isExternal = (href: string) => /^https?:\/\//.test(href)
 export function Footer() {
   return (
     <footer className="site-footer" data-screen-label="Footer">
-      <div className="foot-cta">
-        <h2>
-          Let&rsquo;s build it <span className="accent">in.</span>
-        </h2>
-        <p>Customized AI adoption, architected for how your business actually runs — not bolted on after.</p>
-        <div className="btns">
-          <Link to="/#contact" className="btn btn-demo">
-            Book a Demo
-          </Link>
-          <Link to="/#contact" className="btn btn-learn">
-            Book a Call
-          </Link>
-        </div>
-      </div>
-
       <div className="foot-main">
         <div className="foot-brand">
           <img className="logo" src="/assets/logo.png" alt="Blockverse Technologies.ai" />
