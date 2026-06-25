@@ -721,8 +721,8 @@
   display: flex !important; align-items: center !important; justify-content: center !important;
   font-size: 18px !important;
 }
-.jvm-zoom-btn.jvm-zoom-in  { top: 20px !important; }
-.jvm-zoom-btn.jvm-zoom-out { top: 60px !important; }
+.jvm-zoom-btn.jvm-zoomin  { top: 20px !important; }
+.jvm-zoom-btn.jvm-zoomout { top: 60px !important; }
 .jvm-tooltip {
   position: absolute !important;
   z-index: 1000 !important;
@@ -817,7 +817,26 @@
   .ab-how__card--span { grid-column: span 1; }
   .ab-geo__stats { gap: 32px; }
   .ab-geo__stat-divider { display: none; }
-  .ab-geo__map { height: 360px; }
+  .ab-geo__map { height: 420px; }
+
+  .jvm-zoom-btn {
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 22px !important;
+  }
+  .jvm-zoom-btn.jvm-zoomin { top: 14px !important; }
+  .jvm-zoom-btn.jvm-zoomout { top: 58px !important; }
+
+  .jvm-marker image {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  .jvm-tooltip {
+    font-size: 14px !important;
+    padding: 9px 16px !important;
+    max-width: 220px;
+  }
 
   .ab-join {
     padding: 90px 0;
