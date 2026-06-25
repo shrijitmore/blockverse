@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { FOOTER_COLUMNS } from '../data'
+import { SocialLinks } from '../components/icons'
 
 const isExternal = (href: string) => /^https?:\/\//.test(href)
 
@@ -25,6 +26,7 @@ export function Footer() {
         <div className="foot-brand">
           <img className="logo" src="/assets/logo.png" alt="Blockverse Technologies.ai" />
           <p>We help companies adopt AI and embed it in their real work.</p>
+          <SocialLinks kinds={['linkedin', 'instagram', 'youtube']} className="foot-soc" />
         </div>
 
         {FOOTER_COLUMNS.map((col) => (

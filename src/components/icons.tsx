@@ -44,10 +44,21 @@ export function YouTubeIcon({ className }: IconProps) {
   )
 }
 
+export function InstagramIcon({ className }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+      <rect x="2.5" y="2.5" width="19" height="19" rx="5" />
+      <circle cx="12" cy="12" r="4.2" />
+      <circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none" />
+    </svg>
+  )
+}
+
 const SOCIAL_ICONS = {
   linkedin: LinkedInIcon,
   x: XIcon,
   youtube: YouTubeIcon,
+  instagram: InstagramIcon,
 } as const
 
 export type SocialKind = keyof typeof SOCIAL_ICONS
@@ -56,6 +67,14 @@ const SOCIAL_LABELS: Record<SocialKind, string> = {
   linkedin: 'LinkedIn',
   x: 'X',
   youtube: 'YouTube',
+  instagram: 'Instagram',
+}
+
+const SOCIAL_URLS: Record<SocialKind, string> = {
+  linkedin: 'https://www.linkedin.com/company/blockverse-institute/',
+  instagram: 'https://www.instagram.com/blockverseinstitute_',
+  youtube: 'https://youtube.com/@blockverseinstitute',
+  x: '#',
 }
 
 export function SocialLinks({ kinds, className }: { kinds: SocialKind[]; className?: string }) {
@@ -64,7 +83,7 @@ export function SocialLinks({ kinds, className }: { kinds: SocialKind[]; classNa
       {kinds.map((kind) => {
         const Icon = SOCIAL_ICONS[kind]
         return (
-          <a key={kind} href="#" aria-label={SOCIAL_LABELS[kind]}>
+          <a key={kind} href={SOCIAL_URLS[kind]} target="_blank" rel="noopener noreferrer" aria-label={SOCIAL_LABELS[kind]}>
             <Icon />
           </a>
         )
