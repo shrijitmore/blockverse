@@ -1,8 +1,16 @@
 import '../styles/built-in-method.css'
 import { SiteNav } from '../components/SiteNav'
 import { Footer } from '../sections/Footer'
+import { useSeo } from '../useSeo'
 
 export function BuiltInMethod() {
+  useSeo({
+    title: 'The Built-In Method™ | Blockverse Technologies',
+    description:
+      "The Built-In Method™ weaves AI into the workflows, decisions, systems, and daily behaviours that already run your business — one system, three layers: Executive Fluency, Workforce Adoption, and Agentic AI Workflows.",
+    path: '/built-in-method',
+  })
+
   return (
     <main className="b-wrap">
       <SiteNav />

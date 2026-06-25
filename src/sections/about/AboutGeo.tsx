@@ -3,7 +3,7 @@ import 'jsvectormap/dist/jsvectormap.css'
 
 const STATS = [
   { num: 'HQ', label: 'Netherlands', sub: 'KvK 86755730\nVAT: NL864077014B01' },
-  { num: '7', label: 'Global Markets', sub: 'Active clients and partners\nacross 4 continents.' },
+  { num: '8', label: 'Global Markets', sub: 'Active clients and partners\nacross 4 continents.' },
   { num: '8+', label: 'Industries Live', sub: 'Finance, Healthcare, Real Estate,\nEdTech, Logistics & more.' },
 ]
 
@@ -15,6 +15,7 @@ const LOCATIONS = [
   { flag: '🇸🇬', name: 'Singapore' },
   { flag: '🇦🇺', name: 'Australia' },
   { flag: '🇨🇦', name: 'Canada' },
+  { flag: '🇸🇪', name: 'Sweden' },
 ]
 
 const MAP_MARKERS = [
@@ -25,6 +26,7 @@ const MAP_MARKERS = [
   { name: 'Australia', coords: [-33.8688, 151.2093] as [number, number] },
   { name: 'UAE', coords: [25.2048, 55.2708] as [number, number] },
   { name: 'Canada', coords: [43.6532, -79.3832] as [number, number] },
+  { name: 'Sweden', coords: [59.3293, 18.0686] as [number, number] },
 ]
 
 export function AboutGeo() {
@@ -78,7 +80,7 @@ export function AboutGeo() {
           },
         },
         onRegionTooltipShow(event: Event, _tooltip: unknown, code: string) {
-          const active = ['NL', 'CH', 'IN', 'SG', 'AU', 'AE', 'CA']
+          const active = ['NL', 'CH', 'IN', 'SG', 'AU', 'AE', 'CA', 'SE']
           if (!active.includes(code)) event.preventDefault()
         },
       })
@@ -99,7 +101,7 @@ export function AboutGeo() {
           <span className="ab-kicker">OUR REACH</span>
           <h2 className="ab-section-title">
             Operating across{' '}
-            <span className="ab-grad">7 Countries &amp; 4 Continents</span>
+            <span className="ab-grad">8 Countries &amp; 4 Continents</span>
           </h2>
           <p className="ab-section-sub">
             Headquartered in Europe, deploying custom AI agents for enterprise partners across the globe.

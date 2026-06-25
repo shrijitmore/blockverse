@@ -69,9 +69,10 @@ export function Hero() {
                 {HERO_BUILT.lead} <span className="tag-accent">{HERO_BUILT.accent}</span>
               </span>
             </p>
-            <p className="hero-bolted" style={{ animationDelay: HERO_NOT_BOLTED.delay }}>
-              <span>{HERO_NOT_BOLTED.l1}</span>
-              <span>{HERO_NOT_BOLTED.l2}</span>
+            <p className="headline-tag">
+              <span className="line" style={{ animationDelay: HERO_NOT_BOLTED.delay }}>
+                {HERO_NOT_BOLTED.l1} {HERO_NOT_BOLTED.l2}
+              </span>
             </p>
           </div>
 
