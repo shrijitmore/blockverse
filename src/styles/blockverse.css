@@ -2572,7 +2572,7 @@ body.anim .hero-learn {
     width: min(78%, 360px);
     height: auto;
     max-height: none;
-    margin: clamp(8px, 2vh, 20px) auto -12px;
+    margin: clamp(8px, 2vh, 20px) auto -28px;
     transform: scaleX(-1);
     opacity: 1;
   }
