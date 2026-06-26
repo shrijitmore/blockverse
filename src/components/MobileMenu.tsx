@@ -93,15 +93,9 @@ export function MobileMenu() {
         </nav>
 
         <a
-          href="#contact"
+          href="https://agentic.blockversetechnologies.ai/"
           className="btn btn-call mobile-drawer__cta"
-          onClick={(e) => {
-            e.preventDefault()
-            setOpen(false)
-            setTimeout(() => {
-              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
-            }, 100)
-          }}
+          onClick={() => setOpen(false)}
         >
           Book a Call
         </a>

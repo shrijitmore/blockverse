@@ -2,7 +2,6 @@ import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { AboutGeo } from './sections/about/AboutGeo'
 import { Brands } from './sections/Brands'
-import { Contact } from './sections/Contact'
 import { Footer } from './sections/Footer'
 import { Gap } from './sections/Gap'
 import { Hero } from './sections/Hero'
@@ -21,7 +20,7 @@ export function Landing() {
     path: '/',
   })
 
-  // Support /#how and /#contact links (from inner pages or direct load) — wait a tick for layout.
+  // Support /#how links (from inner pages or direct load) — wait a tick for layout.
   useEffect(() => {
     if (!hash) return
     const id = hash.slice(1)
@@ -39,7 +38,6 @@ export function Landing() {
       <Layers />
       <Gap />
       <AboutGeo />
-      <Contact />
       <Footer />
     </main>
   )

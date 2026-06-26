@@ -22,9 +22,9 @@ export function SiteNav() {
       <nav>
         <NavLinks />
       </nav>
-      <Link to="/#contact" className="btn btn-call nav-book">
+      <a href="https://agentic.blockversetechnologies.ai/" className="btn btn-call nav-book">
         Book a Call
-      </Link>
+      </a>
       <MobileMenu />
     </header>
   )

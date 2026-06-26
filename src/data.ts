@@ -511,7 +511,7 @@ export const FOOTER_COLUMNS: { title: string; links: { label: string; to: string
     links: [
       { label: 'About Us', to: '/about' },
       { label: 'Built-In Method', to: '/built-in-method' },
-      { label: 'Contact', to: '/#contact' },
+      { label: 'Contact', to: 'https://agentic.blockversetechnologies.ai/' },
     ],
   },
   {
