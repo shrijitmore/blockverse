@@ -433,6 +433,19 @@ footer {
   transform: translateY(0);
 }
 
+/* Desktop/tablet only — CTA button above the sub copy. Mobile keeps its own order. */
+@media (min-width: 901px) {
+  .cta-row {
+    order: 2;
+    margin-top: 22px;
+  }
+
+  .sub {
+    order: 3;
+    margin-top: 22px;
+  }
+}
+
 .hero .btn-agentic {
   background: linear-gradient(95deg, #6a5cff 0%, #2bd4c4 100%);
   color: #fff;
