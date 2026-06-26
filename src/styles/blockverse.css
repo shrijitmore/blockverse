@@ -169,10 +169,13 @@ footer {
 .hero::after {
   content: '';
   position: absolute;
-  inset: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 18vh;
   z-index: 2;
   pointer-events: none;
-  background: none;
+  background: linear-gradient(to bottom, transparent, var(--blue-deep));
 }
 
 @keyframes photoIn {
