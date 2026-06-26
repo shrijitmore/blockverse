@@ -2637,7 +2637,7 @@ body.anim .hero-learn {
 @media (max-width: 760px) {
   /* Statement */
   .reveal-section {
-    height: 200vh;
+    height: 140vh;
   }
 
   .statement {

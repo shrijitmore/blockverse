@@ -5,7 +5,7 @@ const clamp = (v: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, v
 const prefersReducedMotion = () =>
   typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-const DIM = 0.18
+const DIM = 0.32
 
 /** Word-by-word scroll reveal, driven by a section's scroll progress. Shared by Statement + Gap. */
 export function useWordReveal<T extends HTMLElement = HTMLElement>() {
