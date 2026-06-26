@@ -25,7 +25,7 @@ const MAP_MARKERS = [
   { name: 'Singapore', coords: [1.3521, 103.8198] as [number, number] },
   { name: 'Australia', coords: [-33.8688, 151.2093] as [number, number] },
   { name: 'UAE', coords: [25.2048, 55.2708] as [number, number] },
-  { name: 'Canada', coords: [48.5, -79.3832] as [number, number] },
+  { name: 'Canada', coords: [53.5, -79.3832] as [number, number] },
   { name: 'Sweden', coords: [59.3293, 18.0686] as [number, number] },
 ]
 
