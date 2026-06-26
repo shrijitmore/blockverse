@@ -2654,7 +2654,16 @@ body.anim .hero-learn {
   }
 
   .statement {
+    font-family: 'Anton', sans-serif;
     font-size: clamp(24px, 6.5vw, 40px);
+    text-transform: uppercase;
+    letter-spacing: 0;
+  }
+
+  .statement .mono {
+    font-family: 'Anton', sans-serif;
+    font-size: 1em;
+    letter-spacing: 0;
   }
 
   /* Brands */
