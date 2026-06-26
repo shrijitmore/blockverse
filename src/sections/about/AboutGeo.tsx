@@ -55,7 +55,8 @@ export function AboutGeo() {
 
   useEffect(() => {
     if (!mapRef.current) return
-    let map: unknown = null
+    let map: { updateSize?: () => void; destroy?: () => void } | null = null
+    let ro: ResizeObserver | undefined
 
     async function loadMap() {
       const { default: jsVectorMap } = await import('jsvectormap')
@@ -84,12 +85,22 @@ export function AboutGeo() {
           if (!active.includes(code)) event.preventDefault()
         },
       })
+
+      // jsVectorMap can size itself against the container before layout/animations
+      // settle, leaving the SVG viewBox wrong until a resize event fires (e.g. on
+      // page reload). Re-measure once layout is stable and on any later resize.
+      requestAnimationFrame(() => map?.updateSize?.())
+      if (mapRef.current) {
+        ro = new ResizeObserver(() => map?.updateSize?.())
+        ro.observe(mapRef.current)
+      }
     }
 
     loadMap().catch(console.error)
     return () => {
-      if (map && (map as { destroy?: () => void }).destroy) {
-        (map as { destroy: () => void }).destroy()
+      ro?.disconnect()
+      if (map?.destroy) {
+        map.destroy()
       }
     }
   }, [])
