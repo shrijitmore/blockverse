@@ -7,7 +7,7 @@ const TEAM = [
     role: 'Founder & CEO',
     email: 'gaurav@blockverseacademy.com',
     location: 'Netherlands 🇳🇱',
-    linkedin: 'https://www.linkedin.com/in/gaurav-gupta-blockverse/',
+    linkedin: 'https://www.linkedin.com/in/gaurav5may',
     photo: '/assets/about/gaurav.jpeg',
   },
   {
@@ -15,7 +15,7 @@ const TEAM = [
     role: 'Co-founder & Investor',
     email: 'nimish@blockverseacademy.com',
     location: 'Switzerland 🇨🇭',
-    linkedin: 'https://www.linkedin.com/in/nimish-vasishta-blockverse/',
+    linkedin: 'https://www.linkedin.com/in/nimishvasishta',
     photo: '/assets/about/nimish.jpeg',
   },
 ]

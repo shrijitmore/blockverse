@@ -813,6 +813,13 @@
 @media (max-width: 768px) {
   .ab-team__grid { grid-template-columns: 1fr; max-width: 440px; }
   .ab-profile-card { height: 400px; }
+
+  /* No hover on touch devices — keep the reveal panel always visible */
+  .ab-profile-card__reveal {
+    max-height: 200px;
+    opacity: 1;
+    margin-top: 18px;
+  }
   .ab-how__cards-col { grid-template-columns: 1fr; }
   .ab-how__card--span { grid-column: span 1; }
   .ab-geo__stats { gap: 32px; }

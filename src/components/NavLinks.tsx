@@ -35,7 +35,7 @@ export function NavLinks() {
         return (
           <li key={link}>
             {isExternal(href) ? (
-              <a href={href} target="_blank" rel="noopener noreferrer">
+              <a href={href}>
                 {link}
               </a>
             ) : (

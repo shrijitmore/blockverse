@@ -12,7 +12,7 @@ export function ExecStatement() {
           Just fluency.
         </p>
         <p className="exec-statement-attr" data-reveal style={{ transitionDelay: '0.2s' }}>
-          A bespoke peer-to-peer engagement · BlockVerse Institute 2026
+          A bespoke peer-to-peer engagement · Blockverse Technologies 2026
         </p>
       </div>
     </section>

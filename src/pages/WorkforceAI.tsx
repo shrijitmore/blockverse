@@ -10,5 +10,5 @@ export function WorkforceAI() {
     path: '/workforce-ai-adoption',
   })
 
-  return <InnerPageFrame src="/inner/teams.html" title="AI Adoption for Teams | BlockVerse" />
+  return <InnerPageFrame src="/inner/teams.html" title="AI Adoption for Teams | Blockverse" />
 }

@@ -19,7 +19,7 @@ export function Footer() {
             <h4>{col.title}</h4>
             {col.links.map((link) =>
               isExternal(link.to) ? (
-                <a href={link.to} key={link.label} target="_blank" rel="noopener noreferrer">
+                <a href={link.to} key={link.label}>
                   {link.label}
                 </a>
               ) : (

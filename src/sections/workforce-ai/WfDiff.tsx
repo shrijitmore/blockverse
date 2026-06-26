@@ -25,7 +25,7 @@ export function WfDiff() {
   return (
     <section className="wf-diff">
       <div className="wf-diff-top">
-        <div className="wf-diff-label" data-reveal>Why Organisations Choose BlockVerse</div>
+        <div className="wf-diff-label" data-reveal>Why Organisations Choose Blockverse</div>
         <h2 data-reveal style={{ transitionDelay: '0.1s' }}>
           Working agents —<br />not frameworks on a shelf.
         </h2>

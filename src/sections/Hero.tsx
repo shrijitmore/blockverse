@@ -69,7 +69,7 @@ export function Hero() {
                 {HERO_BUILT.lead} <span className="tag-accent">{HERO_BUILT.accent}</span>
               </span>
             </p>
-            <p className="headline-tag">
+            <p className="headline-tag headline-tag--bolted-mobile">
               <span className="line" style={{ animationDelay: HERO_NOT_BOLTED.delay }}>
                 {HERO_NOT_BOLTED.l1} {HERO_NOT_BOLTED.l2}
               </span>
@@ -83,7 +83,7 @@ export function Hero() {
           </p>
 
           <div className="cta-row">
-            <a href="https://agentic.blockversetechnologies.ai/" target="_blank" rel="noopener" className="btn btn-agentic">
+            <a href="https://agentic.blockversetechnologies.ai/" className="btn btn-agentic">
               Our Agentic Systems
             </a>
           </div>

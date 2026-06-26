@@ -10,5 +10,5 @@ export function ExecutiveAI() {
     path: '/executive-ai-capability',
   })
 
-  return <InnerPageFrame src="/inner/executive.html" title="Executive AI Capability | BlockVerse" />
+  return <InnerPageFrame src="/inner/executive.html" title="Executive AI Capability | Blockverse" />
 }

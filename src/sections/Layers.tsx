@@ -45,7 +45,7 @@ export function Layers() {
               <p className="panel-text">{l.body}</p>
               {l.cta &&
                 (l.cta.to.startsWith('http') ? (
-                  <a href={l.cta.to} target="_blank" rel="noopener" className="panel-cta">
+                  <a href={l.cta.to} className="panel-cta">
                     {l.cta.label}
                   </a>
                 ) : (

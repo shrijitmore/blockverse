@@ -35,7 +35,7 @@ export function WfCta() {
           >
             Book a Call
           </a>
-          <a href="https://agentic.blockversetechnologies.ai/" target="_blank" rel="noopener" className="wf-cta-btn-ghost">
+          <a href="https://agentic.blockversetechnologies.ai/" className="wf-cta-btn-ghost">
             Explore Custom Agents →
           </a>
         </div>

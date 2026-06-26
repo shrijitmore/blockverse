@@ -11,7 +11,7 @@ export function WfStatement() {
           adoption <strong>actually stick.</strong>
         </p>
         <p className="wf-statement-attr" data-reveal style={{ transitionDelay: '0.2s' }}>
-          Behavioural science meets agentic workflow design · BlockVerse Technologies 2026
+          Behavioural science meets agentic workflow design · Blockverse Technologies 2026
         </p>
       </div>
     </section>

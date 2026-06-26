@@ -65,8 +65,6 @@ export function MobileMenu() {
               <a
                 key={link}
                 href={href}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="mobile-drawer__link"
                 onClick={() => setOpen(false)}
               >

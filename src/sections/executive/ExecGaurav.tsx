@@ -15,7 +15,7 @@ export function ExecGaurav() {
             </div>
             <div>
               <div className="exec-gaurav-sig-name">Gaurav Gupta</div>
-              <div className="exec-gaurav-sig-role">Founder &amp; CEO · BlockVerse Institute</div>
+              <div className="exec-gaurav-sig-role">Founder &amp; CEO · Blockverse Technologies</div>
               <a
                 href="mailto:Gaurav@blockverseacademy.com"
                 className="exec-gaurav-email-link"
@@ -33,7 +33,7 @@ export function ExecGaurav() {
             </div>
             <div className="exec-gaurav-card-body">
               <div className="exec-gaurav-card-name">Gaurav Gupta</div>
-              <div className="exec-gaurav-card-title">Founder &amp; CEO · BlockVerse Institute</div>
+              <div className="exec-gaurav-card-title">Founder &amp; CEO · Blockverse Technologies</div>
               <p className="exec-gaurav-card-desc">
                 A bespoke peer-to-peer engagement. Every session shaped around your challenges — not a curriculum.
               </p>

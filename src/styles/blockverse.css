@@ -315,7 +315,8 @@ footer {
   display: contents;
 }
 
-.hero-tags-row .hero-bolted {
+.hero-tags-row .hero-bolted,
+.headline-tag--bolted-mobile {
   display: none;
 }
 
@@ -2542,6 +2543,10 @@ body.anim .hero-learn {
     flex-wrap: nowrap;
     margin-top: 14px;
     padding: 0 clamp(20px, 6vw, 44px);
+  }
+
+  .headline-tag--bolted-mobile {
+    display: block;
   }
 
   .hero-tags-row .headline-tag {
