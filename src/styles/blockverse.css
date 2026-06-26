@@ -436,14 +436,14 @@ footer {
   transform: translateY(0);
 }
 
-/* Desktop/tablet only — CTA button above the sub copy. Mobile keeps its own order. */
+/* Desktop/tablet only — sub copy above the CTA button. Mobile keeps its own order. */
 @media (min-width: 901px) {
-  .cta-row {
+  .sub {
     order: 2;
     margin-top: 22px;
   }
 
-  .sub {
+  .cta-row {
     order: 3;
     margin-top: 22px;
   }

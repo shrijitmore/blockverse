@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { AboutGeo } from './sections/about/AboutGeo'
 import { Brands } from './sections/Brands'
+import { Contact } from './sections/Contact'
 import { Footer } from './sections/Footer'
 import { Gap } from './sections/Gap'
 import { Hero } from './sections/Hero'
@@ -38,6 +39,7 @@ export function Landing() {
       <Layers />
       <Gap />
       <AboutGeo />
+      <Contact />
       <Footer />
     </main>
   )
