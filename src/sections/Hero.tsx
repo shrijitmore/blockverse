@@ -94,15 +94,6 @@ export function Hero() {
             <span>{HERO_NOT_BOLTED.l1}</span>
             <span>{HERO_NOT_BOLTED.l2}</span>
           </p>
-          <a href="#how" className="hero-learn">
-            <span>Learn How</span>
-            <span className="hero-learn__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
-                <circle cx="11" cy="11" r="7" />
-                <line x1="21" y1="21" x2="16.5" y2="16.5" />
-              </svg>
-            </span>
-          </a>
         </div>
       </div>
     </section>

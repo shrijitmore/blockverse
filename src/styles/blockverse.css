@@ -333,39 +333,6 @@ footer {
   color: var(--ink-dark);
 }
 
-.hero-learn {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  padding: 12px 22px;
-  border-radius: 999px;
-  border: 1.5px solid rgba(255, 255, 255, 0.75);
-  background: rgba(255, 255, 255, 0.08);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-  color: #fff;
-  font-weight: 700;
-  font-size: 16px;
-  text-decoration: none;
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.hero-learn:hover {
-  background: rgba(255, 255, 255, 0.16);
-  transform: translateY(-2px);
-}
-
-.hero-learn__icon {
-  display: grid;
-  place-items: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.18);
-}
-
 .headline {
   font-family: 'League Spartan', sans-serif;
   font-weight: 700;
@@ -576,10 +543,6 @@ body.anim .sub {
 
 body.anim .hero-bolted {
   animation: wordUp 0.85s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
-}
-
-body.anim .hero-learn {
-  animation: fadeUp 0.7s ease 1s backwards;
 }
 
 /* ============ Reveal sections (Statement / Gap) ============ */
@@ -2569,13 +2532,9 @@ body.anim .hero-learn {
     color: var(--ink-dark);
   }
 
-  /* Hide desktop-only bolted + learn how */
+  /* Hide desktop-only bolted text */
   .hero-bolted--desktop {
     display: none !important;
-  }
-
-  .hero-learn {
-    display: none;
   }
 
   .hero-right {
