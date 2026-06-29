@@ -153,7 +153,7 @@ footer {
 
 .hero-photo {
   position: absolute;
-  left: 54%;
+  left: 58%;
   bottom: 0;
   transform: translateX(-50%);
   width: clamp(870px, 97%, 1470px);
