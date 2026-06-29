@@ -2582,15 +2582,17 @@ body.anim .hero-learn {
     display: none;
   }
 
-  /* Photo between tags row and CTA button — negative bottom margin
-     compensates for transparent padding baked into the source PNG. */
+  /* Photo between tags row and CTA button. transform: none cancels the
+     desktop translateX(-50%), which otherwise still shifts the statically
+     positioned mobile image half its own width off-center. */
   .hero-photo {
     position: static;
     order: 4;
+    transform: none;
     width: min(90%, 420px);
     height: auto;
     max-height: none;
-    margin: clamp(8px, 2vh, 20px) auto -30px;
+    margin: clamp(8px, 2vh, 20px) auto clamp(20px, 4vh, 36px);
     z-index: 1;
     opacity: 1;
   }
