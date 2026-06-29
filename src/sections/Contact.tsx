@@ -92,7 +92,7 @@ export function Contact() {
             </button>
             {error && (
               <p className="contact-note" style={{ color: 'var(--pink)' }}>
-                Something went wrong sending your note. Please email support@blockverseacademy.com directly.
+                Something went wrong sending your note. Please email support@blockversetechnologies.ai directly.
               </p>
             )}
             <p className="contact-note">Confidential. Used solely to prepare for your call.</p>

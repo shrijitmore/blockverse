@@ -37,7 +37,7 @@ export function Hero() {
     <section className="hero" data-screen-label="Hero">
       <div className="glow a" aria-hidden="true" />
       <div className="glow b" aria-hidden="true" />
-      <img ref={photoRef} className="hero-photo" src="/assets/BoyTransparent.png" alt="Smiling boy holding two ice cream cones" />
+      <img ref={photoRef} className="hero-photo" src="/assets/Final Hero Face.png" alt="Hero face" />
 
       <header className="nav">
         <Link to="/" aria-label="Blockverse home">

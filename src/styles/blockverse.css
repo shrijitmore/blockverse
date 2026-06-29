@@ -153,16 +153,14 @@ footer {
 
 .hero-photo {
   position: absolute;
-  left: 10%;
-  right: 0;
+  left: 50%;
   bottom: 0;
-  margin-inline: auto;
-  width: clamp(320px, 44%, 660px);
-  height: 98%;
+  transform: translateX(-50%);
+  width: clamp(420px, 48%, 750px);
+  height: auto;
   object-fit: contain;
   object-position: center bottom;
   z-index: 1;
-  transform: scaleX(-1);
   will-change: transform;
 }
 
@@ -180,10 +178,10 @@ footer {
 
 @keyframes photoIn {
   from {
-    transform: scaleX(-1) scale(1.06);
+    transform: translateX(-50%) scale(1.06);
   }
   to {
-    transform: scaleX(-1) scale(1);
+    transform: translateX(-50%) scale(1);
   }
 }
 
@@ -2589,12 +2587,11 @@ body.anim .hero-learn {
   .hero-photo {
     position: static;
     order: 4;
-    width: min(78%, 360px);
+    width: min(90%, 420px);
     height: auto;
     max-height: none;
-    margin: clamp(8px, 2vh, 20px) auto -60px;
+    margin: clamp(8px, 2vh, 20px) auto -30px;
     z-index: 1;
-    transform: scaleX(-1);
     opacity: 1;
   }
 

@@ -44,7 +44,7 @@ export function BuiltInMethod() {
                 <b>Built into work.</b> <span className="b-grad">Not bolted on.</span>
               </p>
             </div>
-            <img className="b-boy" src="/assets/BoyTransparent.png" alt="A child enjoying ice cream — no manual required" />
+            <img className="b-boy" src="/assets/Final Hero Face.png" alt="Hero face" />
           </div>
         </header>
 
@@ -55,7 +55,7 @@ export function BuiltInMethod() {
               Nobody reads the manual. When AI is <span className="b-grad">built in, it gets used</span> — on instinct.
             </div>
             <div className="b-sub">
-              A child needs no manual to enjoy an ice cream. Bolted-on AI ships a manual nobody opens. The Built-In
+              You do not need a manual to enjoy an ice cream. Bolted-on AI ships a manual nobody opens. The Built-In
               Method removes the manual — one system, three layers.
             </div>
           </div>
@@ -287,7 +287,7 @@ export function BuiltInMethod() {
                 back first.
               </p>
               <div className="b-contact">
-                blockverseacademy.com · support@blockverseacademy.com · Netherlands · GCC · India
+                blockversetechnologies.ai · support@blockversetechnologies.ai
               </div>
             </div>
             <a href="https://agentic.blockversetechnologies.ai/" className="b-btn b-anton">
