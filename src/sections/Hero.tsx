@@ -23,7 +23,7 @@ export function Hero() {
         if (!photo) return
         const x = e.clientX / window.innerWidth - 0.5
         const y = e.clientY / window.innerHeight - 0.5
-        photo.style.transform = `scaleX(-1) scale(1.04) translate(${x * -14}px, ${y * -10}px)`
+        photo.style.transform = `translateX(-50%) scale(1.04) translate(${x * -14}px, ${y * -10}px)`
       })
     }
     window.addEventListener('mousemove', onMove)
