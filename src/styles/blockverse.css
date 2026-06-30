@@ -2598,7 +2598,6 @@ body.anim .hero-bolted {
     justify-content: center;
     margin-top: 0;
     padding: 0 clamp(20px, 6vw, 44px);
-    transform: translateX(-5%);
   }
 
   /* Sub text last */
@@ -2611,7 +2610,6 @@ body.anim .hero-bolted {
     max-width: 36ch;
     padding: 0 clamp(20px, 6vw, 44px);
     text-align: center;
-    transform: translateX(-5%);
     position: relative;
     z-index: 3;
     font-size: clamp(13px, 3.2vw, 16px);
