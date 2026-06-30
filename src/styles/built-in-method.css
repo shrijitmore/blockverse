@@ -16,6 +16,7 @@
   min-height: 100vh;
   padding: clamp(96px, 11vh, 132px) 0 0;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 .b-page {
@@ -548,10 +549,11 @@
     grid-template-columns: 1fr;
   }
   .b-boy {
-    width: 110vw;
-    max-width: none;
-    margin: 0 -5vw;
-    transform: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    transform: scale(1.15);
+    transform-origin: top center;
   }
   .b-hero h1 {
     font-size: 44px;
