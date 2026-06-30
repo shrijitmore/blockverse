@@ -156,7 +156,7 @@ footer {
   left: 52%;
   bottom: 0;
   transform: translateX(-50%);
-  width: clamp(870px, 97%, 1470px);
+  width: clamp(480px, 55%, 820px);
   height: auto;
   object-fit: contain;
   object-position: center bottom;
