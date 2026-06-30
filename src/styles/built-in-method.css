@@ -548,11 +548,10 @@
     grid-template-columns: 1fr;
   }
   .b-boy {
-    width: 100%;
+    width: 110vw;
     max-width: none;
-    margin: 0 auto;
-    transform: scale(1.5);
-    transform-origin: center center;
+    margin: 0 -5vw;
+    transform: none;
   }
   .b-hero h1 {
     font-size: 44px;
