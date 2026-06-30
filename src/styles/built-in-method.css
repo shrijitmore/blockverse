@@ -83,7 +83,7 @@
 }
 .b-hero {
   display: grid;
-  grid-template-columns: 1fr clamp(600px, 75%, 1040px);
+  grid-template-columns: 1fr clamp(520px, 62%, 860px);
   gap: clamp(24px, 4vw, 64px);
   align-items: center;
 }
@@ -121,9 +121,10 @@
   font-weight: 700;
 }
 .b-boy {
-  width: 100%;
+  width: 135%;
   height: auto;
   display: block;
+  margin-left: -17%;
 }
 
 /* PRINCIPLE */
