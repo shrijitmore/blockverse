@@ -83,7 +83,7 @@
 }
 .b-hero {
   display: grid;
-  grid-template-columns: 1fr clamp(480px, 55%, 740px);
+  grid-template-columns: 1fr clamp(520px, 62%, 860px);
   gap: clamp(24px, 4vw, 64px);
   align-items: center;
 }
@@ -546,7 +546,8 @@
     grid-template-columns: 1fr;
   }
   .b-boy {
-    max-width: 340px;
+    width: min(94%, 480px);
+    max-width: none;
     margin: 0 auto;
   }
   .b-hero h1 {
