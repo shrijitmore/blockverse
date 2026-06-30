@@ -2550,10 +2550,10 @@ body.anim .hero-bolted {
     position: static;
     order: 4;
     transform: none;
-    width: min(90%, 420px);
+    width: min(96%, 560px);
     height: auto;
     max-height: none;
-    margin: clamp(8px, 2vh, 20px) auto clamp(20px, 4vh, 36px);
+    margin: clamp(8px, 2vh, 20px) auto clamp(6px, 1vh, 12px);
     z-index: 1;
     opacity: 1;
   }

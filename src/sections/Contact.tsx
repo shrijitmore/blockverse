@@ -17,7 +17,7 @@ export function Contact() {
     setSubmitting(true)
     setError(false)
     try {
-      const res = await fetch('/api/submit-intake', {
+      const res = await fetch('/api/submit-intake.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
