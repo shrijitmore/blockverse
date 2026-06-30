@@ -117,9 +117,11 @@ footer {
   0% {
     box-shadow: 0 0 0 0 rgba(255, 99, 160, 0.5);
   }
+
   70% {
     box-shadow: 0 0 0 18px rgba(255, 99, 160, 0);
   }
+
   100% {
     box-shadow: 0 0 0 0 rgba(255, 99, 160, 0);
   }
@@ -153,7 +155,7 @@ footer {
 
 .hero-photo {
   position: absolute;
-  left: 48%;
+  left: 52%;
   bottom: 0;
   transform: translateX(-50%);
   width: clamp(860px, 88%, 1320px);
@@ -180,6 +182,7 @@ footer {
   from {
     transform: translateX(-50%) scale(1.06);
   }
+
   to {
     transform: translateX(-50%) scale(1);
   }
@@ -204,7 +207,7 @@ footer {
 }
 
 /* Centered pill nav */
-.nav > nav {
+.nav>nav {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -353,6 +356,7 @@ footer {
   from {
     transform: translateY(28px);
   }
+
   to {
     transform: translateY(0);
   }
@@ -507,6 +511,7 @@ footer {
   from {
     transform: translateY(-18px);
   }
+
   to {
     transform: translateY(0);
   }
@@ -516,6 +521,7 @@ footer {
   from {
     transform: translateY(18px);
   }
+
   to {
     transform: translateY(0);
   }
@@ -610,18 +616,24 @@ body.anim .hero-bolted {
 }
 
 @keyframes drift1 {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translate(0, 0);
   }
+
   50% {
     transform: translate(-40px, 30px);
   }
 }
 
 @keyframes drift2 {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translate(0, 0);
   }
+
   50% {
     transform: translate(50px, -30px);
   }
@@ -832,6 +844,7 @@ body.anim .hero-bolted {
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(-50%);
   }
@@ -1115,6 +1128,7 @@ body.anim .hero-bolted {
   from {
     transform: scaleX(0);
   }
+
   to {
     transform: scaleX(1);
   }
@@ -1288,9 +1302,11 @@ body.anim .hero-bolted {
   0% {
     left: -65%;
   }
+
   55% {
     left: 135%;
   }
+
   100% {
     left: 135%;
   }
@@ -1325,11 +1341,13 @@ body.anim .hero-bolted {
 }
 
 @keyframes auroraPulse {
+
   0%,
   100% {
     opacity: 0.7;
     transform: translate(-50%, -50%) scale(1);
   }
+
   50% {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1.07);
@@ -1359,12 +1377,15 @@ body.anim .hero-bolted {
     transform: translateY(0);
     opacity: 0;
   }
+
   12% {
     opacity: 0.7;
   }
+
   88% {
     opacity: 0.55;
   }
+
   100% {
     transform: translateY(-78vh);
     opacity: 0;
@@ -1615,6 +1636,7 @@ body.anim .hero-bolted {
     opacity: 0;
     transform: translateY(34px);
   }
+
   to {
     opacity: 1;
     transform: none;
@@ -1741,10 +1763,12 @@ body.anim .hero-bolted {
 }
 
 @keyframes liquidDrift {
+
   0%,
   100% {
     transform: translate(0, 0) scale(1);
   }
+
   50% {
     transform: translate(-4%, 3%) scale(1.07);
   }
@@ -2556,7 +2580,7 @@ body.anim .hero-bolted {
     width: 100%;
     height: 88vw;
     object-fit: cover;
-    object-position: 60% top;
+    object-position: 45% top;
     max-height: none;
     margin-top: clamp(8px, 2vh, 20px);
     margin-bottom: 0;
@@ -2612,11 +2636,13 @@ body.anim .hero-bolted {
     grid-template-columns: 1fr;
   }
 
-  .b-wl, .b-wr {
+  .b-wl,
+  .b-wr {
     grid-column: auto;
   }
 
-  .b-r, .b-l {
+  .b-r,
+  .b-l {
     grid-column: auto;
   }
 
@@ -2627,6 +2653,7 @@ body.anim .hero-bolted {
 
 /* ---- Mobile breakpoint ---- */
 @media (max-width: 760px) {
+
   /* Statement */
   .reveal-section {
     height: 140vh;
@@ -2758,11 +2785,13 @@ body.anim .hero-bolted {
     grid-template-columns: 1fr;
   }
 
-  .b-wl, .b-wr {
+  .b-wl,
+  .b-wr {
     grid-column: auto;
   }
 
-  .b-r, .b-l {
+  .b-r,
+  .b-l {
     grid-column: auto;
   }
 
@@ -2860,52 +2889,66 @@ body.anim .hero-bolted {
   body.anim * {
     animation: none !important;
   }
+
   .word {
     opacity: 1 !important;
   }
+
   .mega-inner {
     transition: none !important;
   }
+
   .mega.armed .mega-inner {
     transform: none !important;
   }
+
   .panel,
   .layer,
   .tab-indicator {
     transition: none !important;
   }
+
   .tab-progress,
   .layer .sheen {
     animation: none !important;
   }
+
   .layer .sheen {
     opacity: 0 !important;
   }
+
   .proven.in .bcard {
     animation: none !important;
   }
+
   .p-particles,
   .proven::before {
     animation: none !important;
   }
+
   .p-particles {
     display: none;
   }
+
   .mq-track {
     animation: none !important;
   }
+
   .cs-glow,
   .layer-glow,
   .bcard-glow {
     animation: none !important;
   }
+
   .cases.in .cs-card {
     animation: none !important;
   }
+
   .portrait-wrap,
   .panel-portrait-wrap {
     animation: none !important;
   }
+
   .founders.in .founder {
     animation: none !important;
   }
@@ -3109,6 +3152,7 @@ body.anim .hero-bolted {
 }
 
 @media (max-width: 860px) {
+
   .contact-grid,
   .contact-row {
     grid-template-columns: 1fr;
