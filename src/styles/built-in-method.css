@@ -121,10 +121,11 @@
   font-weight: 700;
 }
 .b-boy {
-  width: 135%;
+  width: 100%;
   height: auto;
   display: block;
-  margin-left: -17%;
+  transform: scale(1.6);
+  transform-origin: center center;
 }
 
 /* PRINCIPLE */
@@ -547,9 +548,11 @@
     grid-template-columns: 1fr;
   }
   .b-boy {
-    width: min(94%, 480px);
+    width: 100%;
     max-width: none;
     margin: 0 auto;
+    transform: scale(1.5);
+    transform-origin: center center;
   }
   .b-hero h1 {
     font-size: 44px;
