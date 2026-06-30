@@ -547,13 +547,14 @@
   }
   .b-hero {
     grid-template-columns: 1fr;
+    justify-items: center;
   }
   .b-boy {
     width: 100%;
     max-width: 100%;
+    display: block;
     margin: 0 auto;
-    transform: scale(1.15);
-    transform-origin: top center;
+    transform: none;
   }
   .b-hero h1 {
     font-size: 44px;
