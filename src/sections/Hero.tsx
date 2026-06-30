@@ -46,7 +46,7 @@ export function Hero() {
         <nav>
           <NavLinks />
         </nav>
-        <a href="https://agentic.blockversetechnologies.ai/" className="btn btn-call nav-book">
+        <a href="#contact" className="btn btn-call nav-book">
           Book a Call
         </a>
         <MobileMenu />

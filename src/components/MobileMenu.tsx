@@ -93,7 +93,7 @@ export function MobileMenu() {
         </nav>
 
         <a
-          href="https://agentic.blockversetechnologies.ai/"
+          href={pathname === '/' ? '#contact' : '/#contact'}
           className="btn btn-call mobile-drawer__cta"
           onClick={() => setOpen(false)}
         >
