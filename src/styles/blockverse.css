@@ -2549,11 +2549,15 @@ body.anim .hero-bolted {
   .hero-photo {
     position: static;
     order: 4;
+    align-self: center;
     transform: none;
     width: min(96%, 560px);
     height: auto;
     max-height: none;
-    margin: clamp(8px, 2vh, 20px) auto clamp(6px, 1vh, 12px);
+    margin-top: clamp(8px, 2vh, 20px);
+    margin-bottom: clamp(6px, 1vh, 12px);
+    margin-left: auto;
+    margin-right: auto;
     z-index: 1;
     opacity: 1;
   }
@@ -2579,6 +2583,14 @@ body.anim .hero-bolted {
     margin-right: auto;
     max-width: 36ch;
     padding: 0 clamp(20px, 6vw, 44px);
+    position: relative;
+    z-index: 3;
+  }
+
+  /* Bottom fade gradient is for the desktop overlay layout only —
+     hide it on mobile where it cuts across the stacked sub text. */
+  .hero::after {
+    display: none;
   }
 }
 
