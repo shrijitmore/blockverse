@@ -99,9 +99,7 @@ export function AboutGeo() {
     loadMap().catch(console.error)
     return () => {
       ro?.disconnect()
-      if (map?.destroy) {
-        map.destroy()
-      }
+      try { if (map?.destroy) map.destroy() } catch (_) { /* jsvectormap internal cleanup */ }
     }
   }, [])
 

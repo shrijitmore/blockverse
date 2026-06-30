@@ -2554,7 +2554,7 @@ body.anim .hero-bolted {
     width: 100%;
     height: 88vw;
     object-fit: cover;
-    object-position: 32% top;
+    object-position: 36% top;
     max-height: none;
     margin-top: clamp(8px, 2vh, 20px);
     margin-bottom: 0;
