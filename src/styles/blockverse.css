@@ -2478,12 +2478,14 @@ body.anim .hero-bolted {
     text-align: center;
     gap: 0;
     min-height: auto;
-    padding-top: 6px;
+    padding-top: 0;
   }
 
   .nav {
     order: 1;
     width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 
   /* Flatten hero-inner + hero-copy so headline / tags / photo / cta / sub
@@ -2505,7 +2507,7 @@ body.anim .hero-bolted {
   .headline {
     order: 2;
     width: 100%;
-    margin-top: clamp(16px, 3vh, 28px);
+    margin-top: clamp(6px, 1.5vh, 14px);
     padding: 0 clamp(20px, 6vw, 44px);
     font-size: clamp(34px, 9.5vw, 48px);
   }
