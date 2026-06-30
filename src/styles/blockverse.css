@@ -2580,7 +2580,7 @@ body.anim .hero-bolted {
     width: 100%;
     height: 88vw;
     object-fit: cover;
-    object-position: 45% top;
+    object-position: 70% top;
     max-height: none;
     margin-top: clamp(8px, 2vh, 20px);
     margin-bottom: 0;
@@ -2595,9 +2595,10 @@ body.anim .hero-bolted {
     position: relative;
     z-index: 2;
     width: 100%;
-    justify-content: center;
+    justify-content: flex-start;
     margin-top: 0;
     padding: 0 clamp(20px, 6vw, 44px);
+    padding-left: 8%;
   }
 
   /* Sub text last */
@@ -2605,10 +2606,12 @@ body.anim .hero-bolted {
     order: 6;
     width: 100%;
     margin-top: clamp(10px, 2vh, 18px);
-    margin-left: auto;
+    margin-left: 0;
     margin-right: auto;
     max-width: 36ch;
     padding: 0 clamp(20px, 6vw, 44px);
+    padding-left: 8%;
+    text-align: left;
     position: relative;
     z-index: 3;
     font-size: clamp(13px, 3.2vw, 16px);
