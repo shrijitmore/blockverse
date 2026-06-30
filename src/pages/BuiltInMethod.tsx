@@ -290,7 +290,7 @@ export function BuiltInMethod() {
                 blockversetechnologies.ai · support@blockversetechnologies.ai
               </div>
             </div>
-            <a href="https://agentic.blockversetechnologies.ai/" className="b-btn b-anton">
+            <a href="/#contact" className="b-btn b-anton">
               Map your friction →
             </a>
           </div>
