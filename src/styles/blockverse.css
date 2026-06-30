@@ -2550,7 +2550,7 @@ body.anim .hero-bolted {
     position: static;
     order: 4;
     align-self: center;
-    transform: none;
+    transform: translateX(-5%);
     width: min(96%, 560px);
     height: auto;
     max-height: none;
