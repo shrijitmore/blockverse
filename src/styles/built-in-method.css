@@ -83,7 +83,7 @@
 }
 .b-hero {
   display: grid;
-  grid-template-columns: 1fr clamp(520px, 62%, 860px);
+  grid-template-columns: 1fr clamp(600px, 75%, 1040px);
   gap: clamp(24px, 4vw, 64px);
   align-items: center;
 }
