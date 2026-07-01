@@ -29,10 +29,7 @@ export function WfCta() {
           </div>
         </div>
         <div className="wf-cta-btn-row" data-reveal style={{ transitionDelay: '0.3s' }}>
-          <a
-            href="mailto:Gaurav@blockverseacademy.com?subject=Workforce%20Agentic%20AI%20Adoption%20%E2%80%94%20Book%20a%20Call"
-            className="wf-cta-btn"
-          >
+          <a href="/#contact" className="wf-cta-btn">
             Book a Call
           </a>
           <a href="https://agentic.blockversetechnologies.ai/" className="wf-cta-btn-ghost">

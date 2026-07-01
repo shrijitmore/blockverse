@@ -19,7 +19,7 @@ export function ExecNav() {
       <div className="exec-nav-right">
         <a href="#about" className="exec-nav-link">Programme</a>
         <a href="#who" className="exec-nav-link">Who It's For</a>
-        <a href="#apply" className="exec-nav-apply">Apply Now</a>
+        <a href="/#contact" className="exec-nav-apply">Apply Now</a>
       </div>
     </nav>
   )

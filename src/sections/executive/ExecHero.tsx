@@ -13,7 +13,7 @@ export function ExecHero() {
           Built entirely around the decisions you actually make — not a slide deck, not a cohort. Just fluency.
         </p>
         <div className="exec-hero-cta-group">
-          <a href="#apply" className="exec-hero-cta-main">Begin Your Journey</a>
+          <a href="/#contact" className="exec-hero-cta-main">Begin Your Journey</a>
           <span className="exec-hero-cta-sub">6 private sessions · 3 months · 1-on-1 with our CEO</span>
         </div>
       </div>
