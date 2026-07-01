@@ -37,12 +37,12 @@ export function AboutJoin() {
           identify which AI agent delivers the fastest return.
         </p>
         <div ref={ctaRef} className="ab-join__cta" data-ab-anim="fade-up" data-ab-delay="0.2">
-          <button type="button" className="btn btn-demo">
+          <a href="/#contact" className="btn btn-demo">
             Book a Discovery Call
-          </button>
-          <button type="button" className="btn btn-learn">
+          </a>
+          <a href="/built-in-method" className="btn btn-learn">
             Learn More
-          </button>
+          </a>
         </div>
       </div>
     </section>
