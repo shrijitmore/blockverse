@@ -32,7 +32,7 @@ export function Contact() {
           message: message.trim(),
           page:    'Landing Contact',
         },
-        EJS_KEY,
+        { publicKey: EJS_KEY },
       )
       setSubmitted(true)
     } catch {
