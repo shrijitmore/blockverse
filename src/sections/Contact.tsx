@@ -1,6 +1,11 @@
 import { useState } from 'react'
 import type { FormEvent } from 'react'
+import emailjs from '@emailjs/browser'
 import { SectionIntro } from '../components/SectionIntro'
+
+const EJS_SERVICE  = 'service_v2jpcot'
+const EJS_TEMPLATE = 'template_nta7rrf'
+const EJS_KEY      = 'z-9SyzTEfeGGAlAe1'
 
 export function Contact() {
   const [submitted, setSubmitted] = useState(false)
@@ -17,18 +22,18 @@ export function Contact() {
     setSubmitting(true)
     setError(false)
     try {
-      const res = await fetch('/api/submit-intake.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: name.trim(),
-          email: email.trim(),
+      await emailjs.send(
+        EJS_SERVICE,
+        EJS_TEMPLATE,
+        {
+          name:    name.trim(),
+          email:   email.trim(),
           company: company.trim(),
           message: message.trim(),
-          page: 'Landing Contact',
-        }),
-      })
-      if (!res.ok) throw new Error('bad response')
+          page:    'Landing Contact',
+        },
+        EJS_KEY,
+      )
       setSubmitted(true)
     } catch {
       setError(true)
@@ -92,7 +97,7 @@ export function Contact() {
             </button>
             {error && (
               <p className="contact-note" style={{ color: 'var(--pink)' }}>
-                Something went wrong sending your note. Please email support@blockversetechnologies.ai directly.
+                Something went wrong. Please email support@blockversetechnologies.ai directly.
               </p>
             )}
             <p className="contact-note">Confidential. Used solely to prepare for your call.</p>

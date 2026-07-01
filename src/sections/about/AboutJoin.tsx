@@ -40,9 +40,6 @@ export function AboutJoin() {
           <a href="/#contact" className="btn btn-demo">
             Book a Discovery Call
           </a>
-          <a href="/built-in-method" className="btn btn-learn">
-            Learn More
-          </a>
         </div>
       </div>
     </section>
